@@ -1,0 +1,434 @@
+<html>
+<head>
+<title>SensAble Technologies - Guide to Source Code Examples</title>
+<style type="text/css">
+Body {background-color: #000000; text-align: left; font-family: Arial; color: #FFFFFF; font-size: small; text-decoration: none; }
+<!-- :link {color: #CCCCCC; text-decoration: underline; } -->
+a:link {color: #88BBFF; font-size: x-small; text-decoration: none; }
+a:visited {color: #8888FF; font-size: x-small; text-decoration: none; }
+a:hover{color:#FFFFFF;text-decoration:none;font-weight:italic; background: #6666FF}
+.nav.link {color: #CCCCCC; text-decoration: underline; }
+p {font-family: Arial; font-size: small; text-decoration: none; }
+h1 {font-family: Arial; text-align: center; font-size: ex-large }
+hr {text-align: center; color: #000099; width: 90%; height:3; }
+td {filter=progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#6699FF,endColorStr=#FFFFFF) }
+th {text-align: left; font-size: x-small; font-weight: normal; font-face: arial; color: #FFFFFF}
+li {font-size: medium; font-weight: bold; color: #FFFFFF }
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<table border=0 cellpadding=10 cellspacing=0 bgcolor="#FFFFFF" width=100%><td>
+<font color=0>
+<h1><a name="Top"></a>Guide to Source Code Examples<br><font size=x-small>Sensable Technologies</h1>
+The OpenHaptics&#153; toolkit installs several examples with source code to illustrate commonly used functionality of the HDAPI and HLAPI.  These include both console examples and graphics examples. This document provides a description of each example and a link to the directory containing the associated files as well as a link to the executable.</td></table>
+
+<h2>&nbsp;</h2>
+<h2>Contents</h2>
+<ol type=I>
+<LI><b><a href="#HLAPIConsoleExamples"><font size=5>HLAPI Console Examples</font></a></b>
+<LI><b><a href="#HLAPIGraphicExamples"><font size=5>HLAPI Graphics Examples</font></a></b>
+<LI><b><a href="#HDAPIConsoleExamples"><font size=5>HDAPI Console Examples</font></a></b>
+<LI><b><a href="#HDAPIGraphicsExamples"><font size=5>HDAPI Graphics Examples</font></a></b></ol>
+<h2>&nbsp;</h2>
+
+<hr>
+<a name="HLAPIConsoleExamples"></a>
+<h2>&nbsp;</h2>
+<h2>I. HLAPI Console Examples</h2>
+<br>
+
+<font size=4 face=Arial><b>CannedForceEffect</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Shows how to use the friction, spring and constant effects, which are among the pre-programmed force effects provided by the HLAPI.<br>
+<a href="../examples/HL/console/CannedForceEffect">To source files</a> | <a href="../examples/bin/HL/CannedForceEffect.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>CustomForceEffect</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+</table></th></table>
+Shows how to program your own custom effects. Specifically, this example creates an inertia effect by using the callback effect type -- the haptic device is made to feel as if there is a heavy object attached to the end of it by a spring.<br>
+<a href="../examples/HL/console/CustomForceEffect">To source files</a> | <a href="../examples/bin/HL/CustomForceEffect.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>CustomShape</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+</table></th></table>
+Advanced example that shows how to create a custom shape with your own haptic rendering algorithm. This example creates a haptic sphere defined by a radius and center without using OpenGL primitives. It demonstrates use of the callback shape type.<br>
+<a href="../examples/HL/console/CustomShape">To source files</a> | <a href="../examples/bin/HL/CustomShape.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>Deployment</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Shows how to add deployment licensing to an application.  The deployment license allows end-users to run an application without needing a developer license.<br>
+<a href="../examples/HL/console/Deployment">To source files</a> | <a href="../examples/bin/HL/Deployment.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>EffectAttributes</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+</table></th></table>
+Shows how to use various effects and update their attributes in place.  All effect attributes except type can be changed on the fly while the effect is running.<br>
+<a href="../examples/HL/console/EffectAttributes">To source files</a> | <a href="../examples/bin/HL/EffectAttributes.exe">To pre-built executable</a><P>
+
+<a href="#Top"><font size=4 face=Arial><b>Back to top</b></font><br></a>
+<h2>&nbsp;</h2>
+
+
+<hr>
+<a name="HLAPIGraphicExamples"></a>
+<h2>&nbsp;</h2>
+<h2>II. HLAPI Graphics Examples </h2>
+<br>
+
+<font size=4 face=Arial><b>Constraints </b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+</table></th></table>
+Shows how to use the constraint touch mode to create objects that the haptic device sticks to. Renders an OpenGL scene including lines, points, a tessellated NURB surface, and a stroked font(all as constraints).<br>
+<a href="../examples/HL/graphics/Constraints">To source files</a> | <a href="../examples/bin/HL/Constraints.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>Events</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+</table></th></table>
+Shows how to use event callbacks to be notified when objects are touched, when the haptic device moves, and when the buttons on the haptic device are pressed. This sample also shows how to use calibration events to properly calibrate the haptic device.<br>
+<a href="../examples/HL/graphics/Events">To source files</a> | <a href="../examples/bin/HL/Events.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>HapticMaterials</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+</table></th></table>
+Shows a user interface implemented with GLUI that allows you to set the material properties of objects in a simple scene. It also shows how to use the haptic mouse utility library to use the haptic device as a 2D mouse.<br>
+<a href="../examples/HL/graphics/HapticMaterials">To source files</a> | <a href="../examples/bin/HL/hapticMaterials.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>HapticViewer</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+<th bgcolor="#6464FF" width=10></th>
+<th bgcolor="#4B4BFF" width=10></th>
+<th bgcolor="#3232FF" width=10></th>
+<th bgcolor="#1919FF" width=10></th>
+</table></th></table>
+This example is a file viewer that can read and render triangle meshes stored in .obj files. Also shows how to more optimally render large triangle meshes both graphically and haptically using a spatial partition. A number of options are available to the user to compare performance of the various HLAPI shape rendering tools.<br>
+<a href="../examples/HL/graphics/HapticViewer">To source files</a> | <a href="../examples/bin/HL/HapticViewer.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>HelloHaptics</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+</table></th></table>
+Introductory example that shows basic integration of haptics into a very simple OpenGL program. This example renders a white rectangle on a black background. By adding a few extra lines of HLAPI code, you can also feel the rectangle.<br>
+<a href="../examples/HL/graphics/HelloHaptics">To source files</a> | <a href="../examples/bin/HL/HelloHaptics.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>HelloSphere</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Takes the HelloHaptics example a few steps further by replacing the rectangle with a sphere and adding a 3D cursor that follows the position of the haptic device.<br>
+<a href="../examples/HL/graphics/HelloSphere">To source files</a> | <a href="../examples/bin/HL/HelloSphere.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>HelloSphereDual</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+</table></th></table>
+Shows how to use two haptic devices by extending the HelloSphere program to add a second haptic device.<br>
+(requires two haptic devices)<br>
+<a href="../examples/HL/graphics/HelloSphereDual">To source files</a> | <a href="../examples/bin/HL/HelloSphereDual.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>PointManipulation</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+</table></th></table>
+Shows how to snap to 3D points and then manipulate them in 3D. Snapping is implemented using a depth independent technique, which allows the user to select a point independent of depth in the view. In addition, this example demonstrates how to initiate 3D manipulation in a depth independent manner, such that a point is moved relative to position where the haptic device button is clicked.<br>
+This example is very similar to the PointManipulation example from HDAPI, but demonstrates how to use HLAPI instead for easier constraint rendering and event handling.<br>
+<a href="../examples/HL/graphics/PointManipulation">To source files</a> | <a href="../examples/bin/HL/PointManipulation.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>ShapeManipulation</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+<th bgcolor="#6464FF" width=10></th>
+</table></th></table>
+Shows using constraints to allow precise manipulation of objects with the haptic device.  This example also shows how to track the changes in position and orientation of the haptic device and how to apply those changes to an object in the scene. It also shows how to use collision thread events to disable proxy rendering in order to avoid a haptic &quot;kick&quot; when setting constraints on stylus switch clicks.<br>
+<a href="../examples/HL/graphics/ShapeManipulation">To source files</a> | <a href="../examples/bin/HL/ShapeManipulation.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>SimpleDeformableSurface</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+<th bgcolor="#6464FF" width=10></th>
+<th bgcolor="#4B4BFF" width=10></th>
+<th bgcolor="#3232FF" width=10></th>
+<th bgcolor="#1919FF" width=10></th>
+</table></th></table>
+Shows haptic rendering of a deformable surface. A deformable sheet is implemented using a grid of particles connected by a spring damper network. You can feel the surface as well as deform it using the haptic device.<br>
+<a href="../examples/HL/graphics/SimpleDeformableSurface">To source files</a> | <a href="../examples/bin/HL/SimpleDeformableSurface.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>SimpleRigidBodyDynamics</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+<th bgcolor="#6464FF" width=10></th>
+<th bgcolor="#4B4BFF" width=10></th>
+<th bgcolor="#3232FF" width=10></th>
+<th bgcolor="#1919FF" width=10></th>
+<th bgcolor="#0000FF" width=10></th>
+</table></th></table>
+Shows the integration of haptics into a rigid body simulation. Demonstrates a variety of different dynamics scenarios and interaction modes, such as falling blocks, dominos, and catapults.  The device can be used to push around the blocks or used as a spring attached to a block.<br>
+<a href="../examples/HL/graphics/SimpleRigidBodyDynamics">To source files</a> | <a href="../examples/bin/HL/SimpleRigidBodyDynamics.exe">To pre-built executable</a><P>
+
+
+<a href="#Top"><font size=4 face=Arial><b>Back to top</b></font><br></a>
+<h2>&nbsp;</h2>
+
+<hr>
+<a name="HDAPIConsoleExamples"></a>
+<h2>&nbsp;</h2>
+<h2>III. HDAPI Console Examples</h2>
+<br>
+
+<font size=4 face=Arial><b>AnchoredSpringForce</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Shows how to generate a spring force effect that is anchored at the position where the user clicks. A spring force is one of the most common force types used in haptic rendering. This example also allows you to experiment with modifying the stiffness of the spring.<br>
+<a href="../examples/HD/console/AnchoredSpringForce">To source files</a> | <a href="../examples/bin/HD/AnchoredSpringForce.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>Calibration</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+</table></th></table>
+Shows how to handle calibration for the different calibration styles supported by the HDAPI.  Calibration is an important first step before a haptic device can accurately report positions and render forces. <br>
+<a href="../examples/HD/console/Calibration">To source files</a> | <a href="../examples/bin/HD/Calibration.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>CommandMotorDAC</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Advanced example that shows how to command DAC values to directly control the haptic device's motor torques. Shows how to use the DAC API and provides a simple keyboard menu interface for selecting a motor and setting a DAC value.<br>
+<a href="../examples/HD/console/CommandMotorDAC">To source files</a> | <a href="../examples/bin/HD/CommandMotorDAC.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>ErrorHandling</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Shows how to manage proper error handling with HDAPI. Device errors are typically recovered automatically by HDAPI. However, it is important to be notified about the error so that the haptic simulation state can be reset. For instance, this example renders a fixed horizontal plane, but will reset contact state whenever an error occurs. This example also demonstrates a few other typical errors types.<br>
+<a href="../examples/HD/console/ErrorHandling">To source files</a> | <a href="../examples/bin/HD/ErrorHandling.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>FrictionlessPlane</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+</table></th></table>
+Shows how to haptically render contact with a single infinite frictionless plane. In addition, it shows how to make the plane two-sided and allows the user to pop through the plane when a force threshold is exceeded.<br>
+<a href="../examples/HD/console/FrictionlessPlane">To source files</a> | <a href="../examples/bin/HD/FrictionlessPlane.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>FrictionlessSphere</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+</table></th></table>
+Shows how to haptically render contact with a single frictionless sphere. <br>
+<a href="../examples/HD/console/FrictionlessSphere">To source files</a> | <a href="../examples/bin/HD/FrictionlessSphere.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>HelloHapticDevice</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+</table></th></table>
+This is the canonical &quot;hello world&quot; for the HDAPI. It is a simplistic C program that demonstrates the program structure for haptic rendering with the HDAPI, including proper initialization and shutdown, scheduling a callback for haptic rendering, and rendering a gravity well.<br>
+<a href="../examples/HD/console/HelloHapticDevice">To source files</a> | <a href="../examples/bin/HD/HelloHapticDevice.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>PreventWarmMotors</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Shows how to scale down the forces in response to increasing motor temperature so as to prevent the motors from getting too warm.  The motors of a haptic device heat up as torque is applied. The HDAPI has a safety mechanism that will disable the motors when they reach a fixed temperature. <br>
+<a href="../examples/HD/console/PreventWarmMotors">To source files</a> | <a href="../examples/bin/HD/PreventWarmMotors.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>QueryDevice</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Shows how to properly retrieve basic information from the haptic device in a thread-safe manner.<br>
+<a href="../examples/HD/console/QueryDevice">To source files</a> | <a href="../examples/bin/HD/QueryDevice.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>ServoLoopDutyCycle</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+</table></th></table>
+Shows how to time your haptic rendering code and generate statistics on the time taken within each loop (i.e. the duty cycle). This example measures the raw time it takes to update the device when no other computation is being performed.  In order to maintain a consistent update rate for the haptic device, all computation for the servo loop must be carried out within the corresponding update period (i.e. 1 ms for a 1000 Hz servo rate). <br>
+<a href="../examples/HD/console/ServoLoopDutyCycle"><br>To source files</a> | <a href="../examples/bin/HD/ServoLoopDutyCycle.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>ServoLoopRate</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+</table></th></table>
+Shows how to change the servo loop rate.  This example also demonstrates collecting statistics on the timing intervals of the servo loop; these statistics are then written to a log file.  The HDAPI requires by default that the haptic device forces be updated at a rate of 1000 times a second (1000 Hz).  However, the HDAPI also allows you to change this rate to be faster or slower.<br>
+<a href="../examples/HD/console/ServoLoopRate"><br>To source files</a> | <a href="../examples/bin/HD/ServoLoopRate.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>Vibration</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+</table></th></table>
+Shows how to generate a sinusoidal vibration force effect with a fixed direction and amplitude. This example also allows you to experiment with modifying the frequency of the vibration, via the +/- keys.<br>
+<a href="../examples/HD/console/Vibration">To source files</a> | <a href="../examples/bin/HD/Vibration.exe">To pre-built executable</a><P>
+
+<a href="#Top"><font size=4 face=Arial><b>Back to top</b></font><br></a>
+<h2>&nbsp;</h2>
+
+<hr>
+<a name="HDAPIGraphicsExamples"></a>
+<h2>&nbsp;</h2>
+<h2>IV. HDAPI Graphics Examples</h2>
+<br>
+
+<font size=4 face=Arial><b>CoulombField</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+</table></th></table>
+Shows how to model coulomb forces felt between two point charges.  The haptic device end-effector controls the position of one point charge and the other point charge is fixed. The force vector is directed between the particles and the magnitude is inversely proportional to the square of the distance between the points.<br>
+<a href="../examples/HD/graphics/CoulombField">To source files</a> | <a href="../examples/bin/HD/CoulombField.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>CoulombForceDual</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+<th bgcolor="#6464FF" width=10></th>
+</table></th></table>
+Builds on the CoulombField example by allowing two haptic devices to interact together.  This example simulates the coulomb forces between two charged particles, where each particle is controlled by a haptic device.<br>
+(requires two haptic devices)<br>
+<a href="../examples/HD/graphics/CoulombForceDual">To source files</a> | <a href="../examples/bin/HD/CoulombForceDual.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>ParticleWaltz</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+</table></th></table>
+Shows simple constrained dynamics between two particles.  The haptic device end-effector controls the position of the &quot;master&quot; particle, which is connected to a &quot;slave&quot; particle by a spring with a non-zero rest length.  Motion between the two particles causes the spring to apply restoring forces on the particles.  A dynamics simulation is performed at the servo loop rate based on these applied forces which integrates Newton's law of motion (i.e. F = ma) to move the slave particle.<br>
+<a href="../examples/HD/graphics/ParticleWaltz">To source files</a> | <a href="../examples/bin/HD/ParticleWaltz.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>PointManipulation</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+<th bgcolor="#6464FF" width=10></th>
+</table></th></table>
+Incorporates further additions to the PointSnapping example.  This example demonstrates how to snap to a point and then initiate a depth independent manipulation when the user clicks the button. Most importantly, it demonstrates proper event handling of the button click in both the haptic and graphics loops.  In addition, it demonstrates a few manipulation styles: free manipulation, anchored spring force manipulation, or manipulation within a plane. The plane with axes constraint also shows how to nest multiple constraints using the SnapConstraints library.<br>
+<a href="../examples/HD/graphics/PointManipulation">To source files</a> | <a href="../examples/bin/HD/PointManipulation.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>PointSnapping</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+<th bgcolor="#7D7DFF" width=10></th>
+<th bgcolor="#6464FF" width=10></th>
+</table></th></table>
+Shows how to highlight and then select points in 3D by using view-apparent snapping.  A haptic device is a very satisfying and efficient tool for selecting and manipulating objects in 3D.  This example also shows how to use the SnapConstraints library for handling the snapping as well as the HapticDevice C++ wrapper for managing state and event synchronization.<br>
+<a href="../examples/HD/graphics/PointSnapping">To source files</a> | <a href="../examples/bin/HD/PointSnapping.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>SimpleHapticScene</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+</table></th></table>
+Introductory example that shows how to graphically display a 3D cursor using OpenGL and GLUT.  This example demonstrates the proper way to synchronize state between the haptics and graphics loops. It also shows how to properly map the haptic workspace to the view volume using the utility routines available in HDU.  Lastly, it incorporates a simple anchored spring force that becomes active when the haptic device button is pressed.<br>
+<a href="../examples/HD/graphics/SimpleHapticScene">To source files</a> | <a href="../examples/bin/HD/SimpleHapticScene.exe">To pre-built executable</a><P>
+
+<font size=4 face=Arial><b>SlidingContact</b></font><br>
+<table border=0 cellpadding=0 cellspacing=0><th>Complexity:&nbsp</th><th><table border=0 cellspacing=0 cellpadding=0 height=5>
+<th bgcolor="#FFFFFF" width=10></th>
+<th bgcolor="#E1E1FF" width=10></th>
+<th bgcolor="#CBCBFF" width=10></th>
+<th bgcolor="#AFAFFF" width=10></th>
+<th bgcolor="#9696FF" width=10></th>
+</table></th></table>
+Shows how to model object-object contact between two spheres, where one sphere is controlled by the haptic device.  This example demonstrates force feedback from the haptic device where the endpoint is a volume versus a single point.<br>
+<a href="../examples/HD/graphics/SlidingContact">To source files</a> | <a href="../examples/bin/HD/SlidingContact.exe">To pre-built executable</a><P>
+
+<a href="#Top"><font size=4 face=Arial><b>Back to top</b></font><br></a>
+<h2>&nbsp;</h2>
+
+<hr>
+<h2>&nbsp;</h2>
+</body>
+</html>

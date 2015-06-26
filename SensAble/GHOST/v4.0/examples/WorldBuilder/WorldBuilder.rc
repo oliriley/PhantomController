@@ -1,0 +1,568 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "include\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "include\\resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\WorldBuilder.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\GhostApp.ico"
+IDR_GHOSTATYPE          ICON    DISCARDABLE     "res\\GhostAppDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MAIN                BITMAP  DISCARDABLE     "res\\Main.bmp"
+IDB_MATERIAL            BITMAP  DISCARDABLE     "res\\Material.bmp"
+IDB_PRIMITIVES          BITMAP  DISCARDABLE     "res\\Primitvs.bmp"
+IDB_TRANSFORM           BITMAP  DISCARDABLE     "res\\Transform.bmp"
+IDB_SENSABLE            BITMAP  DISCARDABLE     "SensAble.bmp"
+IDB_SPLASH              BITMAP  DISCARDABLE     "Splash.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Import...\tCtrl+I",          ID_FILE_IMPORT
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Duplicate\tCtrl+D",          ID_MAIN_COPY
+        MENUITEM "&Delete\tDel",                ID_DEL_OBJECT
+        MENUITEM "Select A&ll\tCtrl+A",         ID_EDIT_SELECTALL
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Main Toolbar",               ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Mouse Mode",                 IDM_MOUSEMODE
+    END
+    POPUP "&Actions"
+    BEGIN
+        MENUITEM "&Go (view scene)\tCtrl+G",    ID_MAIN_GO
+        MENUITEM "&Restart Servo Loop\t",       IDR_RESTARTSERVO
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About SensAble World Builder...", ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            ID_EDIT_SELECTALL,      VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_NEW_CUBE,            VIRTKEY, ALT, NOINVERT
+    "D",            ID_MAIN_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "I",            ID_FILE_IMPORT,         VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_NEW_GROUP,           VIRTKEY, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_NEW_CONE,            VIRTKEY, ALT, NOINVERT
+    "R",            ID_TRANSFORM_ROTATE,    VIRTKEY, NOINVERT
+    "S",            ID_TRANSFORM_SCALE,     VIRTKEY, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_NEW_SPHERE,          VIRTKEY, ALT, NOINVERT
+    "T",            ID_TRANSFORM_MOVE,      VIRTKEY, NOINVERT
+    "T",            ID_NEW_TORUS,           VIRTKEY, ALT, NOINVERT
+    "U",            ID_DEL_GROUP,           VIRTKEY, NOINVERT
+    "V",            ID_MAIN_GO,             VIRTKEY, NOINVERT
+    VK_DELETE,      ID_DEL_OBJECT,          VIRTKEY, NOINVERT
+    VK_DOWN,        ID_MOVE_Y_DOWN,         VIRTKEY, ALT, NOINVERT
+    VK_DOWN,        ID_MOVE_Z_DOWN,         VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_HOME,        ID_GO_HOME,             VIRTKEY, NOINVERT
+    VK_LEFT,        ID_MOVE_X_LEFT,         VIRTKEY, SHIFT, NOINVERT
+    VK_NEXT,        ID_SCALE_DOWN,          VIRTKEY, NOINVERT
+    VK_PRIOR,       ID_SCALE_UP,            VIRTKEY, NOINVERT
+    VK_RIGHT,       ID_MOVE_X_RIGHT,        VIRTKEY, SHIFT, NOINVERT
+    VK_SPACE,       ID_DESELECT,            VIRTKEY, CONTROL, NOINVERT
+    VK_TAB,         ID_SELECT_NEXT,         VIRTKEY, CONTROL, NOINVERT
+    VK_TAB,         ID_SELECT_PREV,         VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    VK_UP,          ID_MOVE_Y_UP,           VIRTKEY, ALT, NOINVERT
+    VK_UP,          ID_MOVE_Z_UP,           VIRTKEY, SHIFT, NOINVERT
+    "Y",            ID_NEW_CYLINDER,        VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 220, 199
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About SensAble World Builder"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,90,172,40,16,WS_GROUP
+    LTEXT           "SensAble World Builder",IDC_STATIC,24,70,77,8
+    LTEXT           "Copyright (c) 1998-2000  SensAble Technologies, Inc.",
+                    IDC_STATIC,24,102,172,9
+    LTEXT           "All Rights Reserved",IDC_STATIC,24,115,63,8
+    LTEXT           "Visit SensAble on the World Wide Web at",IDC_STATIC,24,
+                    137,132,8
+    LTEXT           "www.sensable.com",IDC_STATIC,24,149,62,8
+    CONTROL         130,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,22,
+                    18,32,30
+    LTEXT           "Version:",IDC_STATIC,26,86,25,8
+    LTEXT           "Static",IDC_VERSION,54,86,128,10
+END
+
+IDD_CALIBRATE DIALOG DISCARDABLE  0, 0, 160, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Calibrate the PHANTOM"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,54,125,50,14
+    CONTROL         "",IDC_ANIMATION,"Static",SS_BITMAP | SS_REALSIZEIMAGE,
+                    26,7,96,76
+    LTEXT           "Hold the PHANTOM in the neutral position.\nDo not use the reset arm on the 3.0 model.",
+                    IDC_STATIC,9,100,141,20
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4, 0, 6, 0
+ PRODUCTVERSION 4, 0, 6, 0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "SensAble Technologies, Inc.\0"
+            VALUE "FileDescription", "Ghost SDK / MFC Application\0"
+	    VALUE "FileVersion", "4.0.6\0"
+            VALUE "InternalName", "GhostApp\0"
+            VALUE "LegalCopyright", "Copyright © 1998-2000 SensAble Technologies, Inc.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "WorldBuilder.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SensAble WorldBuilder\0"
+	    VALUE "ProductVersion", "4.0.6\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDB_PRIMITIVES TOOLBAR DISCARDABLE  28, 28
+BEGIN
+    BUTTON      ID_PRIMITIVE_CUBE
+    BUTTON      ID_PRIMITIVE_SPHERE
+    BUTTON      ID_PRIMITIVE_CONE
+    BUTTON      ID_PRIMITIVE_CYLINDER
+    BUTTON      ID_PRIMITIVE_TORUS
+END
+
+IDB_TRANSFORM TOOLBAR DISCARDABLE  28, 28
+BEGIN
+    BUTTON      ID_TRANSFORM_MOVE
+    BUTTON      ID_TRANSFORM_ROTATE
+    BUTTON      ID_TRANSFORM_SCALE
+    SEPARATOR
+    BUTTON      ID_SCALE_UP
+    BUTTON      ID_SCALE_DOWN
+    BUTTON      ID_GO_HOME
+    BUTTON      ID_GRAB
+END
+
+IDB_MATERIAL TOOLBAR DISCARDABLE  28, 28
+BEGIN
+    BUTTON      ID_MATERIAL_COLOR
+    BUTTON      ID_MATERIAL_DAMPING
+    SEPARATOR
+    BUTTON      ID_MATERIAL_SFRICTION
+    SEPARATOR
+END
+
+IDB_MAIN TOOLBAR DISCARDABLE  28, 28
+BEGIN
+    BUTTON      ID_MAIN_PRIMITIVES
+    BUTTON      ID_MAIN_TRANSFORM
+    BUTTON      ID_MAIN_MATERIAL
+    SEPARATOR
+    BUTTON      ID_MAIN_PREV
+    BUTTON      ID_MAIN_NEXT
+    BUTTON      ID_MAIN_COPY
+    BUTTON      ID_MAIN_GROUP
+    SEPARATOR
+    BUTTON      ID_MAIN_DELETE
+    SEPARATOR
+    BUTTON      ID_MAIN_GO
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "SensAble World Builder\nScene 1\nWorld Builder Scene\nWorld Builder Scenes (*.sce)\n.sce\nWorldBuilderScene\nWorld Builder Scene"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "SensAble World Builder"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    ID_TRANSFORM_ROTATE     "Rotate the selected objects\nRotate the selected objects (R)"
+    ID_TRANSFORM_SCALE      "Scale the selected objects\nScale the selected objects (S)"
+    ID_TRANSFORM_MOVE_X     "Move the selected objects along the X-axis\nMove the selected objects along the X-axis"
+    ID_TRANSFORM_MOVE_Y     "Move the selected objects along the Y-axis\nMove the selected objects along the Y-axis"
+    ID_TRANSFORM_MOVE_Z     "Move the selected objects along the Z-axis\nMove the selected objects along the Z-axis"
+    ID_TRANSFORM_ROTATE_X   "Rotate the selected objects around the X-axis\nRotate the selected objects around the X-axis"
+    ID_TRANSFORM_ROTATE_Y   "Rotate the selected objects around the Y-axis\nRotate the selected objects around the Y-axis"
+    ID_TRANSFORM_ROTATE_Z   "Rotate the selected objects around the Z-axis\nRotate the selected objects around theZ-axis"
+    ID_TRANSFORM_SCALE_X    "Scale the selected objects along the X-axis\nScale the selected objects along the X-axis"
+    ID_TRANSFORM_SCALE_Y    "Scale the selected objects along the Y-axis\nScale the selected objects along the Y-axis"
+    ID_TRANSFORM_SCALE_Z    "Scale the selected objects along the Z-axis\nScale the selected objects along the Z-axis"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    ID_MATERIAL_GETPROPERTIES 
+                            "Get the properties from the object\nGet the properties from the object"
+    ID_MATERIAL_SETPROPERTIES 
+                            "Give the properties to the object\nGive the properties to the object"
+    ID_MATERIAL_COLORPALETTE "Choose the color\nChoose the color"
+    ID_MATERIAL_COLOR       "Choose the color\nChoose the color"
+    ID_MATERIAL_DAMPING     "Set the damping\nSet the damping"
+    ID_MATERIAL_STIFFNESS   "Set the stiffness\nSet the stiffness"
+    ID_MATERIAL_SFRICTION   "Set the static friction\nSet the static friction"
+    ID_MATERIAL_DFRICTION   "Set the dynamic friction\nSet the dynamic friction"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    ID_WORKSPACE_SELECT     "Select the workspace\nSelect the workspace"
+    ID_WORKSPACE_ENABLE     "Enable/disable the workspace\nEnable/disable the workspace"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MAIN_PRIMITIVES      "Open primitives panel\nPrimitives"
+    ID_MAIN_TRANSFORM       "Open transformations panel\nTransformations"
+    ID_MAIN_MATERIAL        "Open material properties panel\nMaterial properties"
+    ID_MAIN_PHANTOM         "Open PHANTOM properties panel\nPHANTOM properties"
+    ID_MAIN_SELECT          "Select objects\nSelect objects"
+    ID_MAIN_PREV            "Select the previous object\nSelect the previous object"
+    ID_MAIN_NEXT            "Select the next object\nSelect the next object"
+    ID_MAIN_COPY            "Duplicate the selected objects\nDuplicate the selected objects (Ctrl+D)"
+    ID_MAIN_GROUP           "New Group/Ungroup the selected objects\nNew Group/Ungroup the selected objects (N/U)"
+    ID_MAIN_DELETE          "Delete the selected objects\nDelete the selected objects (Del)"
+    ID_MAIN_GO              "Go (view scene)\nGo - View scene (V)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PRIMITIVE_CUBE       "Create a cube\nCreate a cube (Alt+C)"
+    ID_PRIMITIVE_SPHERE     "Create a sphere\nCreate a sphere (Alt+S)"
+    ID_PRIMITIVE_CYLINDER   "Create a cylinder\nCreate a cylinder (Alt+Y)"
+    ID_PRIMITIVE_CONE       "Create a cone\nCreate a cone (Alt+O)"
+    ID_PRIMITIVE_TORUS      "Create a torus\nCreate a torus (Alt+T)"
+    ID_TRANSFORM_NONE       "Turn off any transformation\nTurn off any transformation"
+    ID_TRANSFORM_MOVE       "Translate the selected objects\nMove the selected objects (T)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new scene\nNew"
+    ID_FILE_OPEN            "Open an existing scene\nOpen"
+    ID_FILE_SAVE            "Saves the scene\nSave"
+    ID_FILE_SAVE_AS         "Saves the scene with a new name\nSave as"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STATIC_DAMPING       "Damping"
+    ID_STATIC_STIFFNESS     "Stiffness"
+    ID_STATIC_SFRICTION     "StaticF"
+    ID_STATIC_DFRICTION     "DynamicF"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ERROR_NOTZERO        "Must not be zero"
+    ID_ERROR_GREATERZERO    "Must be greater than zero"
+    ID_ERROR_GEQUALZERO     "Must be equal or greater than zero"
+    ID_ERROR_BETWEEN0AND1   "Must be between 0 and 1"
+    ID_ERROR_BETWEEN0AND5   "Must be between 0 and 5"
+    ID_ERROR_FRICTION       "Dynamic friction can not be greater than static friction"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_IMPORT          "Import an existing scene"
+    ID_FILE_ALL             "AllFiles (*.*)|*.*||"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STATIC_DELETE        "Do you really want to delete all selected objects?"
+    ID_STATIC_OVERWRITE     "The file already exists.  Do you want to overwrite it?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MAGIC_SCENE          "Scene"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_RESTARTSERVO        "Restart the PHANTOM servo loop\nRestart the servo loop"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_GRAPHICS            "Enable or disable graphics."
+    IDM_HAPTICS             "Enable or disable haptics."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    CG_IDS_PHYSICAL_MEM     "%lu KB"
+    CG_IDS_DISK_SPACE       "%lu KB Free on %c:"
+    CG_IDS_DISK_SPACE_UNAVAIL "Unavailable"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SCALE_UP             "Scale up the view\nScale up the view (PageUp)"
+    ID_SCALE_DOWN           "Scale down the view\nScale down the view (PageUp)"
+    ID_GO_HOME              "Go to home view\nGo to home view (Home)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_GRAB                 "Grab the scene\nGrab the scene (hold G)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\WorldBuilder.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

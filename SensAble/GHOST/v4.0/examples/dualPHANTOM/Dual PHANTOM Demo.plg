@@ -1,0 +1,82 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Dual PHANTOM Demo - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+Creating command line "rc.exe /l 0x409 /fo"Debug/GhostApp.res" /i "\lib" /d "_DEBUG" /d "_AFXDLL" "C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\GhostApp.rc"" 
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+Creating temporary file "C:\DOCUME~1\gerrychu\LOCALS~1\Temp\RSP1A1.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /Zi /Od /I "." /I ".\include" /I "\include" /I "\external\stl" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "__SGI_STL_INTERNAL_RELOPS" /D "WINNT_USER_MODE" /FR"Debug/" /Fp"Debug/Dual PHANTOM Demo.pch" /Yu"gstAfx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\dualPHANTOM.cpp"
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\dualPHANTOM_graphics.cpp"
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\dualPHANTOM_haptics.cpp"
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\GhostApp.cpp"
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\GhostAppDoc.cpp"
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\GhostAppView.cpp"
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\gstFreebody.cpp"
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\gerrychu\LOCALS~1\Temp\RSP1A1.tmp" 
+Creating temporary file "C:\DOCUME~1\gerrychu\LOCALS~1\Temp\RSP1A2.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /Zi /Od /I "." /I ".\include" /I "\include" /I "\external\stl" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "__SGI_STL_INTERNAL_RELOPS" /D "WINNT_USER_MODE" /FR"Debug/" /Fp"Debug/Dual PHANTOM Demo.pch" /Yc"gstAfx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\src\gstAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\gerrychu\LOCALS~1\Temp\RSP1A2.tmp" 
+warning: unresolved Environment Variable  "$(GHOST_LIB_VERSION)"
+warning: unresolved Environment Variable  "$(GHOST_BASE)"
+Creating temporary file "C:\DOCUME~1\gerrychu\LOCALS~1\Temp\RSP1A3.tmp" with contents
+[
+HapticView.lib ghost.lib reset_screen.lib quit.lib opengl32.lib glu32.lib glaux.lib largeint.lib /nologo /subsystem:windows /incremental:no /pdb:"Debug/Dual PHANTOM.pdb" /debug /machine:I386 /out:"Debug/Dual PHANTOM.exe" /pdbtype:sept /libpath:"\lib" 
+".\Debug\dualPHANTOM.obj"
+".\Debug\dualPHANTOM_graphics.obj"
+".\Debug\dualPHANTOM_haptics.obj"
+".\Debug\GhostApp.obj"
+".\Debug\GhostAppDoc.obj"
+".\Debug\GhostAppView.obj"
+".\Debug\gstAfx.obj"
+".\Debug\gstFreebody.obj"
+".\Debug\MainFrm.obj"
+".\Debug\GhostApp.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\gerrychu\LOCALS~1\Temp\RSP1A3.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+
+
+C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\GhostApp.rc (170): error RC2135 : file not found: res\SensAble.bmp
+
+
+C:\Program Files\SensAble\GHOST\v4.0\examples\dualPHANTOM\GhostApp.rc (171): error RC2135 : file not found: res\Splash.bmp
+Error executing rc.exe.
+
+
+
+<h3>Results</h3>
+Dual PHANTOM.exe - 2 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

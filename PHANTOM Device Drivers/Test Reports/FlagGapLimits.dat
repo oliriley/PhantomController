@@ -1,0 +1,37 @@
+# PHANTOM Desktop Flag / Gap Width Limits
+# The actual flag & gap width limits used within the driver are provided below
+#
+# Axis 0	MIN	MAX
+# Flag 1	733	1057
+# Flag 2	1189	1482
+# Flag 3	1614	1940
+# Gap  1	4263	4703
+# Gap  2	3531	4151
+#
+# Axis 1	MIN	MAX
+# Flag 1	757	1051
+# Flag 2	1186	1382
+# Flag 3	1501	1784
+# Gap  1	2864	3201
+# Gap  2	2423	2732
+#
+# Axis 2	MIN	MAX
+# Flag 1	522	1024
+#
+# Axis 0
+#	MIN	MAX
+	799	1016
+	1230	1447
+	1648	1874
+	4217	4443
+	3791	3994
+# Axis 1
+#	MIN	MAX
+	823	1054
+	1179	1382
+	1501	1718
+	2834	3135
+	2489	2762
+# Axis 2
+#	MIN	MAX
+	654	892

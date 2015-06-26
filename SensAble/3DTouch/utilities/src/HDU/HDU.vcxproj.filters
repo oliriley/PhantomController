@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a9ac8dfa-30fa-40ca-b8e5-b9011f6599fe}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Math Source">
+      <UniqueIdentifier>{ed8718e3-6864-4aa0-910d-6a4b55f547b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{852c155b-845f-4e73-a938-d1238126c6f3}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Math Headers">
+      <UniqueIdentifier>{da2e1e57-086b-4e57-a46c-ff0e59e4ff79}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\hdu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduHapticDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduDecompose.cpp">
+      <Filter>Source Files\Math Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduLine.cpp">
+      <Filter>Source Files\Math Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduLineSegment.cpp">
+      <Filter>Source Files\Math Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduMatrix.cpp">
+      <Filter>Source Files\Math Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduPlane.cpp">
+      <Filter>Source Files\Math Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hduQuaternion.cpp">
+      <Filter>Source Files\Math Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\hduDecompose.h">
+      <Filter>Source Files\Math Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hdu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hduAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduHapticDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduBoundBox.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduGenericMatrix.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduLine.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduLineSegment.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduMath.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduMatrix.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduPlane.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduQuaternion.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\HDU\hduVector.h">
+      <Filter>Header Files\Math Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\HDU\hduVector.inl">
+      <Filter>Header Files\Math Headers</Filter>
+    </None>
+  </ItemGroup>
+</Project>

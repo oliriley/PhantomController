@@ -1,0 +1,42 @@
+
+
+H2.FUNCTION_HEADER, H2.CLASS_HEADER, H2.ENUM_HEADER
+  { 
+  font-size: 15pt; 
+  font-family: verdana,arial,helvetica,sans-serif; 
+  margin-bottom: 0.8em;
+  }
+
+H1.CHAPTER_HEADER
+  { 
+  font-size: 15pt; 
+  font-family: verdana,arial,helvetica,sans-serif; 
+  margin-bottom: 0.8em;
+  }
+
+.HEADER 
+  { 
+  font-size: 9pt;
+  font-family: verdana,arial,helvetica,sans-serif;
+  background: black;
+  color: white;
+  font-weight: bold;
+  }
+
+.CODE 
+  {
+  font-size: 10pt; 
+  font-family: monospace
+  }
+
+BODY
+  {
+  font-family: verdana,arial,helvetica,sans-serif; 
+  }
+
+BODY.INDEX
+  {
+  font-size: 8pt; 
+  font-family: verdana,arial,helvetica,sans-serif; 
+  }
+

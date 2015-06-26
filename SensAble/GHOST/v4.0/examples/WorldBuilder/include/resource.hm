@@ -1,0 +1,12 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by Phantom.rc
+//
+#define HID_TRANSFORM_MOVE_X            0x80ac7d16    // IDD_TRANSFORM_MOVE [English (U.S.)]
+#define HID_TRANSFORM_MOVE_Y            0x80ac7d17    // IDD_TRANSFORM_MOVE [English (U.S.)]
+#define HID_TRANSFORM_MOVE_Z            0x80ac7d18    // IDD_TRANSFORM_MOVE [English (U.S.)]
+#define HID_TRANSFORM_ROTATE_X          0x80ad7d1a    // IDD_TRANSFORM_ROTATE [English (U.S.)]
+#define HID_TRANSFORM_ROTATE_Y          0x80ad7d1b    // IDD_TRANSFORM_ROTATE [English (U.S.)]
+#define HID_TRANSFORM_ROTATE_Z          0x80ad7d1c    // IDD_TRANSFORM_ROTATE [English (U.S.)]
+#define HID_TRANSFORM_SCALE_X           0x80ae7d1e    // IDD_TRANSFORM_SCALE [English (U.S.)]
+#define HID_TRANSFORM_SCALE_Y           0x80ae7d1f    // IDD_TRANSFORM_SCALE [English (U.S.)]
+#define HID_TRANSFORM_SCALE_Z           0x80ae7d20    // IDD_TRANSFORM_SCALE [English (U.S.)]

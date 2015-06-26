@@ -1,0 +1,170 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Constraints", "Constraints\Constraints.vcproj", "{90ECD223-759A-4CA6-8A89-CDB57D81C004}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Events", "Events\Events.vcproj", "{F600FCBF-D86F-41DA-9520-3B2D5FA6BDA9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HapticMaterials", "HapticMaterials\HapticMaterials.vcproj", "{B53D6AE8-B872-4CF9-A18C-A371B2D9A6AB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HapticViewer", "HapticViewer\HapticViewer.vcproj", "{40822292-AA99-4F43-AA02-C00FE4695002}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloHaptics", "HelloHaptics\HelloHaptics.vcproj", "{F287F20D-30E2-40DA-807A-9215D1C3391F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloSphere", "HelloSphere\HelloSphere.vcproj", "{3FAB66F5-BA54-470F-9D4B-3E73E58A76BC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloSphereDual", "HelloSphereDual\HelloSphereDual.vcproj", "{26E33972-AB91-4199-A878-3B994EF5853C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointManipulation", "PointManipulation\PointManipulation.vcproj", "{567F4BAC-4081-4A75-9A01-08DC0EDD4C95}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShapeManipulation", "ShapeManipulation\ShapeManipulation.vcproj", "{9A7E7EB6-99A0-4DB4-95A1-591BF1CC1C14}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleDeformableSurface", "SimpleDeformableSurface\SimpleDeformableSurface.vcproj", "{225CBC3B-7851-4377-8A51-22C881C0D0AE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleRigidBodyDynamics", "SimpleRigidBodyDynamics\SimpleRigidBodyDynamics.vcproj", "{BC59A690-8389-43B6-9B7E-71B8ECC840E1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 12
+		SccProjectUniqueName0 = Constraints\\Constraints.vcproj
+		SccLocalPath0 = Constraints
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = Events\\Events.vcproj
+		SccLocalPath1 = Events
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = HapticMaterials\\HapticMaterials.vcproj
+		SccProjectName2 = HapticMaterials
+		SccLocalPath2 = .
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection2 = HapticMaterials\\
+		SccProjectUniqueName3 = HapticViewer\\HapticViewer.vcproj
+		SccLocalPath3 = HapticViewer
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = HelloHaptics\\HelloHaptics.vcproj
+		SccLocalPath4 = HelloHaptics
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = HelloSphere\\HelloSphere.vcproj
+		SccLocalPath5 = HelloSphere
+		CanCheckoutShared = true
+		SccProjectUniqueName6 = HelloSphereDual\\HelloSphereDual.vcproj
+		SccProjectName6 = HelloSphereDual
+		SccLocalPath6 = HelloSphereDual
+		CanCheckoutShared = true
+		SccProjectUniqueName7 = PointManipulation\\PointManipulation.vcproj
+		SccLocalPath7 = PointManipulation
+		CanCheckoutShared = true
+		SccProjectUniqueName8 = ShapeManipulation\\ShapeManipulation.vcproj
+		SccLocalPath8 = ShapeManipulation
+		CanCheckoutShared = true
+		SccProjectUniqueName9 = SimpleDeformableSurface\\SimpleDeformableSurface.vcproj
+		SccProjectName9 = \u0022$/SimpleDeformableSurface\u0022,\u0020KYBAAAAA
+		SccLocalPath9 = SimpleDeformableSurface
+		CanCheckoutShared = true
+		SccProjectUniqueName10 = SimpleRigidBodyDynamics\\SimpleRigidBodyDynamics.vcproj
+		SccProjectName10 = \u0022$/SimpleRigidBodyDynamics\u0022,\u0020WACAAAAA
+		SccLocalPath10 = SimpleRigidBodyDynamics
+		CanCheckoutShared = true
+		SccProjectName11 = Perforce\u0020Project
+		SccLocalPath11 = .
+		SccProvider11 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {3F454111-7341-4308-ADBA-90662E1BC994}
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		ReleaseWithSymbols = ReleaseWithSymbols
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{90ECD223-759A-4CA6-8A89-CDB57D81C004}.Debug.ActiveCfg = Debug|Win32
+		{90ECD223-759A-4CA6-8A89-CDB57D81C004}.Debug.Build.0 = Debug|Win32
+		{90ECD223-759A-4CA6-8A89-CDB57D81C004}.Release.ActiveCfg = Release|Win32
+		{90ECD223-759A-4CA6-8A89-CDB57D81C004}.Release.Build.0 = Release|Win32
+		{90ECD223-759A-4CA6-8A89-CDB57D81C004}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{90ECD223-759A-4CA6-8A89-CDB57D81C004}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{F600FCBF-D86F-41DA-9520-3B2D5FA6BDA9}.Debug.ActiveCfg = Debug|Win32
+		{F600FCBF-D86F-41DA-9520-3B2D5FA6BDA9}.Debug.Build.0 = Debug|Win32
+		{F600FCBF-D86F-41DA-9520-3B2D5FA6BDA9}.Release.ActiveCfg = Release|Win32
+		{F600FCBF-D86F-41DA-9520-3B2D5FA6BDA9}.Release.Build.0 = Release|Win32
+		{F600FCBF-D86F-41DA-9520-3B2D5FA6BDA9}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{F600FCBF-D86F-41DA-9520-3B2D5FA6BDA9}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{B53D6AE8-B872-4CF9-A18C-A371B2D9A6AB}.Debug.ActiveCfg = Debug|Win32
+		{B53D6AE8-B872-4CF9-A18C-A371B2D9A6AB}.Debug.Build.0 = Debug|Win32
+		{B53D6AE8-B872-4CF9-A18C-A371B2D9A6AB}.Release.ActiveCfg = Release|Win32
+		{B53D6AE8-B872-4CF9-A18C-A371B2D9A6AB}.Release.Build.0 = Release|Win32
+		{B53D6AE8-B872-4CF9-A18C-A371B2D9A6AB}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{B53D6AE8-B872-4CF9-A18C-A371B2D9A6AB}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{40822292-AA99-4F43-AA02-C00FE4695002}.Debug.ActiveCfg = Debug|Win32
+		{40822292-AA99-4F43-AA02-C00FE4695002}.Debug.Build.0 = Debug|Win32
+		{40822292-AA99-4F43-AA02-C00FE4695002}.Release.ActiveCfg = Release|Win32
+		{40822292-AA99-4F43-AA02-C00FE4695002}.Release.Build.0 = Release|Win32
+		{40822292-AA99-4F43-AA02-C00FE4695002}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{40822292-AA99-4F43-AA02-C00FE4695002}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{F287F20D-30E2-40DA-807A-9215D1C3391F}.Debug.ActiveCfg = Debug|Win32
+		{F287F20D-30E2-40DA-807A-9215D1C3391F}.Debug.Build.0 = Debug|Win32
+		{F287F20D-30E2-40DA-807A-9215D1C3391F}.Release.ActiveCfg = Release|Win32
+		{F287F20D-30E2-40DA-807A-9215D1C3391F}.Release.Build.0 = Release|Win32
+		{F287F20D-30E2-40DA-807A-9215D1C3391F}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{F287F20D-30E2-40DA-807A-9215D1C3391F}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{3FAB66F5-BA54-470F-9D4B-3E73E58A76BC}.Debug.ActiveCfg = Debug|Win32
+		{3FAB66F5-BA54-470F-9D4B-3E73E58A76BC}.Debug.Build.0 = Debug|Win32
+		{3FAB66F5-BA54-470F-9D4B-3E73E58A76BC}.Release.ActiveCfg = Release|Win32
+		{3FAB66F5-BA54-470F-9D4B-3E73E58A76BC}.Release.Build.0 = Release|Win32
+		{3FAB66F5-BA54-470F-9D4B-3E73E58A76BC}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{3FAB66F5-BA54-470F-9D4B-3E73E58A76BC}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{26E33972-AB91-4199-A878-3B994EF5853C}.Debug.ActiveCfg = Debug|Win32
+		{26E33972-AB91-4199-A878-3B994EF5853C}.Debug.Build.0 = Debug|Win32
+		{26E33972-AB91-4199-A878-3B994EF5853C}.Release.ActiveCfg = Release|Win32
+		{26E33972-AB91-4199-A878-3B994EF5853C}.Release.Build.0 = Release|Win32
+		{26E33972-AB91-4199-A878-3B994EF5853C}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{26E33972-AB91-4199-A878-3B994EF5853C}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{567F4BAC-4081-4A75-9A01-08DC0EDD4C95}.Debug.ActiveCfg = Debug|Win32
+		{567F4BAC-4081-4A75-9A01-08DC0EDD4C95}.Debug.Build.0 = Debug|Win32
+		{567F4BAC-4081-4A75-9A01-08DC0EDD4C95}.Release.ActiveCfg = Release|Win32
+		{567F4BAC-4081-4A75-9A01-08DC0EDD4C95}.Release.Build.0 = Release|Win32
+		{567F4BAC-4081-4A75-9A01-08DC0EDD4C95}.ReleaseWithSymbols.ActiveCfg = ReleaseWithSymbols|Win32
+		{567F4BAC-4081-4A75-9A01-08DC0EDD4C95}.ReleaseWithSymbols.Build.0 = ReleaseWithSymbols|Win32
+		{9A7E7EB6-99A0-4DB4-95A1-591BF1CC1C14}.Debug.ActiveCfg = Debug|Win32
+		{9A7E7EB6-99A0-4DB4-95A1-591BF1CC1C14}.Debug.Build.0 = Debug|Win32
+		{9A7E7EB6-99A0-4DB4-95A1-591BF1CC1C14}.Release.ActiveCfg = Release|Win32
+		{9A7E7EB6-99A0-4DB4-95A1-591BF1CC1C14}.Release.Build.0 = Release|Win32
+		{9A7E7EB6-99A0-4DB4-95A1-591BF1CC1C14}.ReleaseWithSymbols.ActiveCfg = ReleaseWithSymbols|Win32
+		{9A7E7EB6-99A0-4DB4-95A1-591BF1CC1C14}.ReleaseWithSymbols.Build.0 = ReleaseWithSymbols|Win32
+		{225CBC3B-7851-4377-8A51-22C881C0D0AE}.Debug.ActiveCfg = Debug|Win32
+		{225CBC3B-7851-4377-8A51-22C881C0D0AE}.Debug.Build.0 = Debug|Win32
+		{225CBC3B-7851-4377-8A51-22C881C0D0AE}.Release.ActiveCfg = Release|Win32
+		{225CBC3B-7851-4377-8A51-22C881C0D0AE}.Release.Build.0 = Release|Win32
+		{225CBC3B-7851-4377-8A51-22C881C0D0AE}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{225CBC3B-7851-4377-8A51-22C881C0D0AE}.ReleaseWithSymbols.Build.0 = Release|Win32
+		{BC59A690-8389-43B6-9B7E-71B8ECC840E1}.Debug.ActiveCfg = Debug|Win32
+		{BC59A690-8389-43B6-9B7E-71B8ECC840E1}.Debug.Build.0 = Debug|Win32
+		{BC59A690-8389-43B6-9B7E-71B8ECC840E1}.Release.ActiveCfg = Release|Win32
+		{BC59A690-8389-43B6-9B7E-71B8ECC840E1}.Release.Build.0 = Release|Win32
+		{BC59A690-8389-43B6-9B7E-71B8ECC840E1}.ReleaseWithSymbols.ActiveCfg = Release|Win32
+		{BC59A690-8389-43B6-9B7E-71B8ECC840E1}.ReleaseWithSymbols.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoulombField", "CoulombField\CoulombField.vcproj", "{FC2E9BCB-C867-4FC7-956E-89A0B3773B58}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoulombForceDual", "CoulombForceDual\CoulombForceDual.vcproj", "{6E5BFBA4-8C77-4313-8AC5-89DBFB664E02}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParticleWaltz", "ParticleWaltz\ParticleWaltz.vcproj", "{4EAF44AF-5D44-41E2-A93C-0F489B81CCDD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointManipulation", "PointManipulation\PointManipulation.vcproj", "{F12EC4EB-7F4D-4DA3-AF73-AC116327D583}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointSnapping", "PointSnapping\PointSnapping.vcproj", "{85F19E8D-D94D-4FA1-A887-8FC535B49E26}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleHapticScene", "SimpleHapticScene\SimpleHapticScene.vcproj", "{AF532F60-1150-403A-8A1A-89C8162040E5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SlidingContact", "SlidingContact\SlidingContact.vcproj", "{F2783A8B-F8F1-42EF-B4A4-11111156BC98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC2E9BCB-C867-4FC7-956E-89A0B3773B58}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FC2E9BCB-C867-4FC7-956E-89A0B3773B58}.Debug|Win32.Build.0 = Debug|Win32
+		{FC2E9BCB-C867-4FC7-956E-89A0B3773B58}.Release|Win32.ActiveCfg = Release|Win32
+		{FC2E9BCB-C867-4FC7-956E-89A0B3773B58}.Release|Win32.Build.0 = Release|Win32
+		{6E5BFBA4-8C77-4313-8AC5-89DBFB664E02}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6E5BFBA4-8C77-4313-8AC5-89DBFB664E02}.Debug|Win32.Build.0 = Debug|Win32
+		{6E5BFBA4-8C77-4313-8AC5-89DBFB664E02}.Release|Win32.ActiveCfg = Release|Win32
+		{6E5BFBA4-8C77-4313-8AC5-89DBFB664E02}.Release|Win32.Build.0 = Release|Win32
+		{4EAF44AF-5D44-41E2-A93C-0F489B81CCDD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4EAF44AF-5D44-41E2-A93C-0F489B81CCDD}.Debug|Win32.Build.0 = Debug|Win32
+		{4EAF44AF-5D44-41E2-A93C-0F489B81CCDD}.Release|Win32.ActiveCfg = Release|Win32
+		{4EAF44AF-5D44-41E2-A93C-0F489B81CCDD}.Release|Win32.Build.0 = Release|Win32
+		{F12EC4EB-7F4D-4DA3-AF73-AC116327D583}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F12EC4EB-7F4D-4DA3-AF73-AC116327D583}.Debug|Win32.Build.0 = Debug|Win32
+		{F12EC4EB-7F4D-4DA3-AF73-AC116327D583}.Release|Win32.ActiveCfg = Release|Win32
+		{F12EC4EB-7F4D-4DA3-AF73-AC116327D583}.Release|Win32.Build.0 = Release|Win32
+		{85F19E8D-D94D-4FA1-A887-8FC535B49E26}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85F19E8D-D94D-4FA1-A887-8FC535B49E26}.Debug|Win32.Build.0 = Debug|Win32
+		{85F19E8D-D94D-4FA1-A887-8FC535B49E26}.Release|Win32.ActiveCfg = Release|Win32
+		{85F19E8D-D94D-4FA1-A887-8FC535B49E26}.Release|Win32.Build.0 = Release|Win32
+		{AF532F60-1150-403A-8A1A-89C8162040E5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AF532F60-1150-403A-8A1A-89C8162040E5}.Debug|Win32.Build.0 = Debug|Win32
+		{AF532F60-1150-403A-8A1A-89C8162040E5}.Release|Win32.ActiveCfg = Release|Win32
+		{AF532F60-1150-403A-8A1A-89C8162040E5}.Release|Win32.Build.0 = Release|Win32
+		{F2783A8B-F8F1-42EF-B4A4-11111156BC98}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F2783A8B-F8F1-42EF-B4A4-11111156BC98}.Debug|Win32.Build.0 = Debug|Win32
+		{F2783A8B-F8F1-42EF-B4A4-11111156BC98}.Release|Win32.ActiveCfg = Release|Win32
+		{F2783A8B-F8F1-42EF-B4A4-11111156BC98}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
