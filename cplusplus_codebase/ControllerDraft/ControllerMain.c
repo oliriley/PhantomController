@@ -35,6 +35,13 @@ Description:
 static HDdouble gSpringStiffness = 0.1;
 static HDdouble gMaxStiffness = 1.0;
 static HDdouble gStiffnessIncrement = 0.025;
+///////////////////////////////
+/////Stuff Oliver has added////
+double dPosCurrentX;
+double dPosCurrentY;
+double dPosCurrentZ;
+///////////////////////////////
+///////////////////////////////
 
 HDSchedulerHandle gCallbackHandle = 0;
 
@@ -182,7 +189,21 @@ HDCallbackCode HDCALLBACK AnchoredSpringForceCallback(void *pUserData)
     hdBeginFrame(hdGetCurrentDevice());
 
     hdGetDoublev(HD_CURRENT_POSITION, position);
-    
+
+////////////////////////////////////
+////Stuff Oliver has changed////////	
+	if (position[0] != dPosCurrentX || position[1] != dPosCurrentY || position[2] != dPosCurrentZ)
+	{
+		dPosCurrentX = position[0];
+		dPosCurrentY = position[1];
+		dPosCurrentZ = position[2];
+
+		printf("%f\n",dPosCurrentX);
+		printf("%f\n",dPosCurrentY);
+		printf("%f\n",dPosCurrentZ);
+	}
+////////////////////////////////////
+////////////////////////////////////
     hdGetIntegerv(HD_CURRENT_BUTTONS, &nCurrentButtons);
     hdGetIntegerv(HD_LAST_BUTTONS, &nLastButtons);
 

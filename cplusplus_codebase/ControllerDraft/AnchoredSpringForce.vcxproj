@@ -71,7 +71,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>hdud.lib;hd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Exec\AnchoredSpringForce.exe</OutputFile>
+      <OutputFile>.\Exec\ControllerDraftProj.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\..\SensAble\3DTouch\utilities\lib;..\..\SensAble\3DTouch\lib;$(3DTOUCH_BASE)\lib;$(3DTOUCH_BASE)\utilities\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
