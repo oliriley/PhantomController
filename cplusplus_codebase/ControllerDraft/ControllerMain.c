@@ -40,6 +40,13 @@ static HDdouble gStiffnessIncrement = 0.025;
 double dPosCurrentX;
 double dPosCurrentY;
 double dPosCurrentZ;
+
+double dForceCurrentX;
+double dForceCurrentY;
+double dForceCurrentZ;
+
+int count;
+static int MAX_COUNT = 750;
 ///////////////////////////////
 ///////////////////////////////
 
@@ -100,6 +107,36 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
+////////////////////////////////////
+////Stuff Oliver has added//////////	
+ void updateUser(hduVector3Dd position, hduVector3Dd force)
+ {
+	if (position[0] != dPosCurrentX || position[1] != dPosCurrentY || position[2] != dPosCurrentZ)
+	{
+		dPosCurrentX = position[0];
+		dPosCurrentY = position[1];
+		dPosCurrentZ = position[2];
+
+		printf("x = %f\n",dPosCurrentX);
+		printf("y = %f\n",dPosCurrentY);
+		printf("z = %f\n",dPosCurrentZ);
+		printf("\n");
+	}
+	if (force[0] != dForceCurrentX || force[1] != dForceCurrentY || force[2] != dForceCurrentZ)
+	{
+		dForceCurrentX = force[0];
+		dForceCurrentY = force[1];
+		dForceCurrentZ = force[2];
+
+		printf("x force = %f\n",dForceCurrentX);
+		printf("y force = %f\n",dForceCurrentY);
+		printf("z force = %f\n",dForceCurrentZ);
+		printf("\n");
+	}
+}
+////////////////////////////////////
+////////////////////////////////////
 
 /******************************************************************************
  Main loop.  
@@ -172,7 +209,6 @@ void mainLoop()
     }
 }
 
-
 /******************************************************************************
  * Main scheduler callback for rendering the anchored spring force.
  *****************************************************************************/
@@ -190,21 +226,7 @@ HDCallbackCode HDCALLBACK AnchoredSpringForceCallback(void *pUserData)
 
     hdGetDoublev(HD_CURRENT_POSITION, position);
 
-////////////////////////////////////
-////Stuff Oliver has changed////////	
-	if (position[0] != dPosCurrentX || position[1] != dPosCurrentY || position[2] != dPosCurrentZ)
-	{
-		dPosCurrentX = position[0];
-		dPosCurrentY = position[1];
-		dPosCurrentZ = position[2];
-
-		printf("%f\n",dPosCurrentX);
-		printf("%f\n",dPosCurrentY);
-		printf("%f\n",dPosCurrentZ);
-	}
-////////////////////////////////////
-////////////////////////////////////
-    hdGetIntegerv(HD_CURRENT_BUTTONS, &nCurrentButtons);
+	hdGetIntegerv(HD_CURRENT_BUTTONS, &nCurrentButtons);
     hdGetIntegerv(HD_LAST_BUTTONS, &nLastButtons);
 
     if ((nCurrentButtons & HD_DEVICE_BUTTON_1) != 0 &&
@@ -235,6 +257,15 @@ HDCallbackCode HDCALLBACK AnchoredSpringForceCallback(void *pUserData)
                 
         hdSetDoublev(HD_CURRENT_FORCE, force);
     }
+//////////////////////////////////////////////
+//More stuff oliver has added: call to update position and force display//
+	if (count>MAX_COUNT)
+	{
+		updateUser(position, force);
+		count -= MAX_COUNT;
+	}
+//////////////////////////////////////////////
+//////////////////////////////////////////////
 
     hdEndFrame(hdGetCurrentDevice());
 
@@ -250,7 +281,7 @@ HDCallbackCode HDCALLBACK AnchoredSpringForceCallback(void *pUserData)
             return HD_CALLBACK_DONE;
         }
     }
-
+	count++;
     return HD_CALLBACK_CONTINUE;
 }
 
