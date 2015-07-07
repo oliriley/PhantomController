@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="OmniMain.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OmniClass.cpp">
+    <ClCompile Include="OmniMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
