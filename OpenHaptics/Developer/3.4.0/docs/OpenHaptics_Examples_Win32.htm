@@ -1,0 +1,2760 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="OpenHaptics_Examples_files/filelist.xml">
+<link rel=Edit-Time-Data href="OpenHaptics_Examples_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>SensAble Technologies - Guide to Source Code Examples</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="City"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Venkat Gourishankar</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Venkat Gourishankar</o:LastAuthor>
+  <o:Revision>64</o:Revision>
+  <o:TotalTime>231</o:TotalTime>
+  <o:Created>2008-11-03T18:58:00Z</o:Created>
+  <o:LastSaved>2009-04-07T14:13:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>3216</o:Words>
+  <o:Characters>18333</o:Characters>
+  <o:Company>STI</o:Company>
+  <o:Lines>152</o:Lines>
+  <o:Paragraphs>43</o:Paragraphs>
+  <o:CharactersWithSpaces>21506</o:CharactersWithSpaces>
+  <o:Version>10.6845</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+a:hover{color:#FFFFFF;text-decoration:none;font-weight:italic; background: #6666FF}
+.nav.link {color: #CCCCCC; text-decoration: underline; }
+h1
+	{font-size: ex-large ;}
+td
+	{filter=progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#6699FF,endColorStr=#FFFFFF) ;}
+th
+	{font-face: arial;}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	color:#88BBFF;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	color:#8888FF;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-noshow:yes;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:navy;
+	font-size:12.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:105544213;
+	mso-list-template-ids:622359062;}
+@list l0:level1
+	{mso-level-start-at:5;
+	mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:right;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:2045515549;
+	mso-list-template-ids:527234980;}
+@list l1:level1
+	{mso-level-number-format:roman-upper;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:right;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="17410"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=black lang=EN-US link="#88BBFF" vlink="#8888FF" style='tab-interval:
+.5in'>
+
+<div class=Section1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0in;background:white;mso-padding-alt:7.5pt 7.5pt 7.5pt 7.5pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:7.5pt 7.5pt 7.5pt 7.5pt'>
+  <h1><a name=Top></a><span style='color:black'>Guide to Source Code Examples<br>
+  <span class=SpellE>Sensable</span> Technologies<o:p></o:p></span></h1>
+  <p class=MsoNormal><span style='font-family:Arial;color:black'>The
+  OpenHaptics&#8482; toolkit installs several examples with source code to
+  illustrate commonly used functionality of the HDAPI and HLAPI. These include both
+  console examples and graphics examples. This document provides a description
+  of each example and a link to the directory containing the associated files
+  as well as a link to the executable.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<h2><span style='font-family:Arial;color:white'>Contents<o:p></o:p></span></h2>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><b><span style='font-size:13.5pt;
+font-family:Arial;mso-fareast-font-family:Arial;color:white'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>I.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:13.5pt;font-family:
+Arial;color:white'><a href="#HLAPIConsoleExamples"><span style='font-size:18.0pt'>HLAPI
+Console Examples</span></a> <o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><b><span style='font-size:13.5pt;
+font-family:Arial;mso-fareast-font-family:Arial;color:white'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>II.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:13.5pt;font-family:
+Arial;color:white'><a href="#HLAPIGraphicExamples"><span style='font-size:18.0pt'>HLAPI
+Graphics Examples</span></a> <o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><b><span style='font-size:13.5pt;
+font-family:Arial;mso-fareast-font-family:Arial;color:white'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp; </span>III.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:13.5pt;font-family:
+Arial;color:white'><a href="#HDAPIConsoleExamples"><span style='font-size:18.0pt'>HDAPI
+Console Examples</span></a> <o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><b><span style='font-size:13.5pt;
+font-family:Arial;mso-fareast-font-family:Arial;color:white'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'><span
+style='mso-spacerun:yes'> </span></span>IV.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:13.5pt;font-family:
+Arial;color:white'><a href="#HDAPIGraphicsExamples"><span style='font-size:
+18.0pt'>HDAPI Graphics Examples</span></a><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in'><![if !supportLists]><b><span style='font-size:18.0pt;
+font-family:Arial;mso-fareast-font-family:Arial;color:white'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'><span
+style='mso-spacerun:yes'> </span></span>V.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b><span style='font-size:18.0pt;font-family:
+Arial;color:white'><a href="#QuickHapticsExamples"><span class=SpellE><span
+style='mso-ansi-font-size:18.0pt;mso-bidi-font-size:18.0pt'>QuickHaptics</span></span><span
+style='mso-ansi-font-size:18.0pt;mso-bidi-font-size:18.0pt'> Examples</span></a><o:p></o:p></span></b></p>
+
+<h2><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<div class=MsoNormal align=center style='text-align:center'><span
+style='font-family:Arial;color:white'>
+
+<hr size=3 width="90%" noshade color="#000099" align=center>
+
+</span></div>
+
+<h2><a name=HLAPIConsoleExamples></a><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<h2><span style='font-family:Arial;color:white'>I. HLAPI Console Examples<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='font-family:Arial;color:white'><br>
+</span><span class=SpellE><b><span style='font-size:13.5pt;font-family:Arial;
+color:white'>CannedForceEffect</span></b></span><span style='font-family:Arial;
+color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:Arial;color:white'>Shows
+how to use the friction, spring and constant effects, which are among the
+pre-programmed force effects provided by the HLAPI.</span></span><span
+style='font-family:Arial;color:white'><br>
+<a href="../examples/HL/console/CannedForceEffect"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/CannedForceEffect.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>CustomForceEffect</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to program your own
+custom effects.</span></span><span style='color:white'> Specifically, this
+example creates an inertia effect by using the callback effect type -- the
+haptic device is made to feel as if there is a heavy object attached to the end
+of it by a spring.<br>
+<a href="../examples/HL/console/CustomForceEffect"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/CustomForceEffect.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>CustomShape</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Advanced example that shows how
+to create a custom shape with your own haptic rendering algorithm.</span></span><span
+style='color:white'> This example creates a haptic sphere defined by a radius
+and center without using OpenGL primitives. It demonstrates use of the callback
+shape type.<br>
+<a href="../examples/HL/console/CustomShape"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/CustomShape.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><b><span style='font-size:13.5pt;color:white'>Deployment</span></b><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to add deployment
+licensing to an application.</span></span><span style='color:white'> The
+deployment license allows end-users to run an application without needing a
+developer license.<br>
+<a href="../examples/HL/console/Deployment"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/Deployment.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>EffectAttributes</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to use various effects and update their attributes
+in place. All effect attributes except type can be changed on the fly while the
+effect is running.<br>
+<a href="../examples/HL/console/EffectAttributes"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/EffectAttributes.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="#Top"><b><span style='font-size:13.5pt'>Back
+to top</span></b><span style='font-size:10.0pt'><br>
+</span></a><o:p></o:p></span></p>
+
+<h2><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<div class=MsoNormal align=center style='text-align:center'><span
+style='font-family:Arial;color:white'>
+
+<hr size=3 width="90%" noshade color="#000099" align=center>
+
+</span></div>
+
+<h2><a name=HLAPIGraphicExamples></a><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<h2><span style='font-family:Arial;color:white'>II. HLAPI Graphics Examples <o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='font-family:Arial;color:white'><br>
+</span><b><span style='font-size:13.5pt;font-family:Arial;color:white'>Constraints
+</span></b><span style='font-family:Arial;color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:Arial;color:white'>Shows
+how to use the constraint touch mode to create objects that the haptic device
+sticks to.</span></span><span style='font-family:Arial;color:white'> Renders an
+OpenGL scene including lines, points, a tessellated NURB surface, and a stroked
+<span class=GramE>font(</span>all as constraints).<br>
+<a href="../examples/HL/graphics/Constraints"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/Constraints.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><b><span style='font-size:13.5pt;color:white'>Events</span></b><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to use event callbacks to be notified
+when objects are touched, when the haptic device moves, and when the buttons on
+the haptic device are pressed. This sample also shows how to use calibration
+events to properly calibrate the haptic device.<br>
+<a href="../examples/HL/graphics/Events"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/Events.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>HapticMaterials</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows a user interface implemented with GLUI that
+allows you to set the material properties of objects in a simple scene. It also
+shows how to use the haptic mouse utility library to use the haptic device as a
+2D mouse.<br>
+<a href="../examples/HL/graphics/HapticMaterials"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/hapticMaterials.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>HapticViewer</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#6464FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#4B4BFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#3232FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#1919FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>This example is a file viewer that can read and render
+triangle meshes stored in .<span class=SpellE>obj</span> files. Also shows how
+to more optimally render large triangle meshes both graphically and <span
+class=SpellE>haptically</span> using a spatial partition. A number of options
+are available to the user to compare performance of the various HLAPI shape
+rendering tools.<br>
+<a href="../examples/HL/graphics/HapticViewer"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/HapticViewer.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>HelloHaptics</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Introductory example that shows basic
+integration of haptics into a very simple OpenGL program.</span></span><span
+style='color:white'> This example renders a white rectangle on a black
+background. By adding a few extra lines of HLAPI code, you can also feel the
+rectangle.<br>
+<a href="../examples/HL/graphics/HelloHaptics"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/HelloHaptics.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>HelloSphere</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Takes the <span class=SpellE>HelloHaptics</span>
+example a few steps further by replacing the rectangle with a sphere and adding
+a 3D cursor that follows the position of the haptic device.<br>
+<a href="../examples/HL/graphics/HelloSphere"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/HelloSphere.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>HelloSphereDual</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to use two haptic
+devices by extending the <span class=SpellE>HelloSphere</span> program to add a
+second haptic device.</span></span><span style='color:white'><br>
+(<span class=GramE>requires</span> two haptic devices)<br>
+<a href="../examples/HL/graphics/HelloSphereDual"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/HelloSphereDual.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>HL_DOP_Demo</span></b></span><b><span
+style='font-size:13.5pt;color:white'><span style='mso-tab-count:1'>  </span></span></b><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:14.3pt'>
+    <td width=10 style='width:.1in;background:white;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#E1E1FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#CBCBFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#AFAFFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#9696FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#7D7DFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#6464FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#4B4BFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#3232FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#1919FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows using the proxy depth of
+penetration feature of the HLAPI to vary forces depending on how far the user
+has penetrated in to the surface of an object.</span></span><span
+style='color:white'> User can feel going through two layers when probing in to
+the spine. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../examples/HL/graphics/HL_DOP_Demo"><span
+style='font-size:10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HL/HL_DOP_Demo.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>PointManipulation</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to snap to 3D points and then manipulate
+them in 3D. Snapping is implemented using a depth independent technique, which
+allows the user to select a point independent of depth in the view. In
+addition, this example demonstrates how to initiate 3D manipulation in a depth
+independent manner, such that a point is moved relative to position where the
+haptic device button is clicked.<br>
+This example is very similar to the <span class=SpellE>PointManipulation</span>
+example from HDAPI, but demonstrates how to use HLAPI instead for easier
+constraint rendering and event handling.<br>
+<a href="../examples/HL/graphics/PointManipulation"><span style='font-size:
+10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HL/PointManipulation.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>ShapeManipulation</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#6464FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows using constraints to allow
+precise manipulation of objects with the haptic device.</span></span><span
+style='color:white'> This example also shows how to track the changes in
+position and orientation of the haptic device and how to apply those changes to
+an object in the scene. It also shows how to use collision thread events to
+disable proxy rendering in order to avoid a haptic &quot;kick&quot; when
+setting constraints on stylus switch clicks.<br>
+<a href="../examples/HL/graphics/ShapeManipulation"><span style='font-size:
+10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HL/ShapeManipulation.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'> pre-built
+executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>SimplePinchDemo</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes;height:14.3pt'>
+    <td width=10 style='width:.1in;background:white;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#E1E1FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#CBCBFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#AFAFFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#9696FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#7D7DFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#6464FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#4B4BFF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#3232FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:.1in;background:#1919FF;padding:0in 0in 0in 0in;
+    height:14.3pt'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to implement a simple deformable surface
+and use the <span class=SpellE>thumbpad</span>/ scissors as a pinch &amp; pull <span
+class=GramE>accessory .</span> <br>
+<a href="../examples/HL/graphics/SimplePinchDemo"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HL/SimplePinchDemo.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>SimpleDeformableSurface</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#6464FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#4B4BFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#3232FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#1919FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows haptic rendering of a
+deformable surface.</span></span><span style='color:white'> A deformable sheet is
+implemented using a grid of particles connected by a spring damper network. You
+can feel the surface as well as deform it using the haptic device.<br>
+<a href="../examples/HL/graphics/SimpleDeformableSurface"><span
+style='font-size:10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HL/SimpleDeformableSurface.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>SimpleRigidBodyDynamics</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#6464FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#4B4BFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#3232FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#1919FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:blue;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows the integration of haptics
+into a rigid body simulation.</span></span><span style='color:white'> <span
+class=GramE>Demonstrates a variety of different dynamics scenarios and
+interaction modes, such as falling blocks, dominos, and catapults.</span> The
+device can be used to push around the blocks or used as a spring attached to a
+block.<br>
+<a href="../examples/HL/graphics/SimpleRigidBodyDynamics"><span
+style='font-size:10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HL/SimpleRigidBodyDynamics.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="#Top"><b><span style='font-size:13.5pt'>Back
+to top</span></b><span style='font-size:10.0pt'><br>
+</span></a><o:p></o:p></span></p>
+
+<h2><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<div class=MsoNormal align=center style='text-align:center'><span
+style='font-family:Arial;color:white'>
+
+<hr size=3 width="90%" noshade color="#000099" align=center>
+
+</span></div>
+
+<h2><a name=HDAPIConsoleExamples></a><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<h2><span style='font-family:Arial;color:white'>III. HDAPI Console Examples<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='font-family:Arial;color:white'><br>
+</span><span class=SpellE><b><span style='font-size:13.5pt;font-family:Arial;
+color:white'>AnchoredSpringForce</span></b></span><span style='font-family:
+Arial;color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:Arial;color:white'>Shows how to
+generate a spring force effect that is anchored at the position where the user
+clicks. A spring force is one of the most common force types used in haptic
+rendering. This example also allows you to experiment with modifying the
+stiffness of the spring.<br>
+<a href="../examples/HD/console/AnchoredSpringForce"><span style='font-size:
+10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HD/AnchoredSpringForce.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><b><span style='font-size:13.5pt;color:white'>Calibration</span></b><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to handle calibration for
+the different calibration styles supported by the HDAPI.</span></span><span
+style='color:white'> Calibration is <span class=GramE>an important first step
+before a haptic device can accurately report positions and render</span>
+forces. <br>
+<a href="../examples/HD/console/Calibration"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/Calibration.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>CommandMotorDAC</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Advanced example that shows how
+to command DAC values to directly control the haptic device's motor torques.</span></span><span
+style='color:white'> Shows how to use the DAC API and provides a simple
+keyboard menu interface for selecting a motor and setting a DAC value.<br>
+<a href="../examples/HD/console/CommandMotorDAC"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/CommandMotorDAC.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>CommandJointTorque</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Advanced example that shows how to command joint
+torque values to directly control the haptic device's base and <span
+class=SpellE>gimbal</span> joints. This example assumes a virtual torsion
+spring at each joint and the torque is calculated based on the law Torque = <span
+class=SpellE>TorqueConstant</span> * <span class=SpellE>TwistAngle</span>. <br>
+<span style='mso-spacerun:yes'> </span><a
+href="../examples/HD/console/CommandJointTorque"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/CommandJointTorque.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>ErrorHandling</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to manage proper error
+handling with HDAPI.</span></span><span style='color:white'> Device errors are
+typically recovered automatically by HDAPI. However, it is important to be
+notified about the error so that the haptic simulation state can be reset. For
+instance, this example renders a fixed horizontal plane, but will reset contact
+state whenever an error occurs. This example also demonstrates a few other
+typical errors types.<br>
+<a href="../examples/HD/console/ErrorHandling"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/ErrorHandling.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>FrictionlessPlane</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to <span class=SpellE>haptically</span>
+render contact with a single infinite frictionless plane.</span></span><span
+style='color:white'> In addition, it shows how to make the plane two-sided and
+allows the user to pop through the plane when a force threshold is exceeded.<br>
+<a href="../examples/HD/console/FrictionlessPlane"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/FrictionlessPlane.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>FrictionlessSphere</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to <span class=SpellE>haptically</span>
+render contact with a single frictionless sphere.</span></span><span
+style='color:white'> <br>
+<a href="../examples/HD/console/FrictionlessSphere"><span style='font-size:
+10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HD/FrictionlessSphere.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>HelloHapticDevice</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>This is the canonical &quot;hello world&quot; for the
+HDAPI. It is a simplistic C program that demonstrates the program structure for
+haptic rendering with the HDAPI, including proper initialization and shutdown,
+scheduling a callback for haptic rendering, and rendering <span class=GramE>a
+gravity</span> well.<br>
+<a href="../examples/HD/console/HelloHapticDevice"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/HelloHapticDevice.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>PreventWarmMotors</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to scale down the
+forces in response to increasing motor temperature so as to prevent the motors
+from getting too warm.</span></span><span style='color:white'> The motors of a
+haptic device heat up as torque is applied. The HDAPI has a safety mechanism
+that will disable the motors when they reach a fixed temperature. <br>
+<a href="../examples/HD/console/PreventWarmMotors"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/PreventWarmMotors.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>QueryDevice</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to properly retrieve
+basic information from the haptic device in a thread-safe manner.</span></span><span
+style='color:white'><br>
+<a href="../examples/HD/console/QueryDevice"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/QueryDevice.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>ServoLoopDutyCycle</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to time your haptic rendering code and
+generate statistics on the time taken within each loop (i.e. the duty cycle).
+This example measures the raw time it takes to update the device when no other
+computation is being performed. In order to maintain a consistent update rate
+for the haptic device, all computation for the servo loop must be carried out
+within the corresponding update period (i.e. 1 <span class=GramE>ms</span> for
+a 1000 Hz servo rate). <br>
+<a href="../examples/HD/console/ServoLoopDutyCycle"><span style='font-size:
+10.0pt'><br>
+To source files</span></a> | <a href="../examples/bin/Win32/HD/ServoLoopDutyCycle.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>ServoLoopRate</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to change the servo
+loop rate.</span></span><span style='color:white'> This example also
+demonstrates collecting statistics on the timing intervals of the servo loop;
+these statistics are then written to a log file. The HDAPI requires by default
+that the haptic device forces be updated at a rate of 1000 times a second (1000
+Hz). However, the HDAPI also allows you to change this rate to be faster or
+slower.<br>
+<a href="../examples/HD/console/ServoLoopRate"><span style='font-size:10.0pt'><br>
+To source files</span></a> | <a href="../examples/bin/Win32/HD/ServoLoopRate.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><b><span style='font-size:13.5pt;color:white'>Vibration</span></b><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows how to generate a
+sinusoidal vibration force effect with a fixed direction and amplitude.</span></span><span
+style='color:white'> This example also allows you to experiment with modifying
+the frequency of the vibration, via <span class=GramE>the +/-</span> keys.<br>
+<a href="../examples/HD/console/Vibration"><span style='font-size:10.0pt'>To source
+files</span></a> | <a href="../examples/bin/Win32/HD/Vibration.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="#Top"><b><span style='font-size:13.5pt'>Back
+to top</span></b><span style='font-size:10.0pt'><br>
+</span></a><o:p></o:p></span></p>
+
+<h2><span style='font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<div class=MsoNormal align=center style='text-align:center'><span
+style='font-family:Arial;color:white'>
+
+<hr size=3 width="90%" noshade color="#000099" align=center>
+
+</span></div>
+
+<h2><a name=HDAPIGraphicsExamples></a><span style='font-family:Arial;
+color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<h2><span style='font-family:Arial;color:white'>IV. HDAPI Graphics Examples<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='font-family:Arial;color:white'><br>
+</span><span class=SpellE><b><span style='font-size:13.5pt;font-family:Arial;
+color:white'>CoulombField</span></b></span><span style='font-family:Arial;
+color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span class=GramE><span style='font-family:Arial;color:white'>Shows
+how to model coulomb forces felt between two point charges.</span></span><span
+style='font-family:Arial;color:white'> The haptic device end-<span
+class=SpellE>effector</span> controls the position of one point charge and the
+other point charge is fixed. The force vector is directed between the particles
+and the magnitude is inversely proportional to the square of the distance
+between the points.<br>
+<a href="../examples/HD/graphics/CoulombField"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/CoulombField.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>CoulombForceDual</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#6464FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Builds on the <span
+class=SpellE>CoulombField</span> example by allowing two haptic devices to
+interact together.</span></span><span style='color:white'> This example
+simulates the coulomb forces between two charged particles, where each particle
+is controlled by a haptic device.<br>
+(<span class=GramE>requires</span> two haptic devices)<br>
+<a href="../examples/HD/graphics/CoulombForceDual"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/CoulombForceDual.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>ParticleWaltz</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span class=GramE><span style='color:white'>Shows simple constrained
+dynamics between two particles.</span></span><span style='color:white'> The
+haptic device end-<span class=SpellE>effector</span> controls the position of
+the &quot;master&quot; particle, which is connected to a &quot;slave&quot;
+particle by a spring with a non-zero rest length. Motion between the two
+particles causes the spring to apply restoring forces on the particles. A
+dynamics simulation is performed at the servo loop rate based on these applied
+forces which integrates </span><st1:City><st1:place><span style='color:white'>Newton</span></st1:place></st1:City><span
+style='color:white'>'s law of motion (i.e. F = ma) to move the slave particle.<br>
+<a href="../examples/HD/graphics/ParticleWaltz"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/ParticleWaltz.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>PointManipulation</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#6464FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Incorporates further additions to the <span
+class=SpellE>PointSnapping</span> example. This example demonstrates how to
+snap to a point and then initiate a depth independent manipulation when the
+user clicks the button. Most importantly, it demonstrates proper event handling
+of the button click in both the haptic and graphics loops. In addition, it
+demonstrates a few manipulation styles: free manipulation, anchored spring
+force manipulation, or manipulation within a plane. The plane with axes
+constraint also shows how to nest multiple constraints using the <span
+class=SpellE>SnapConstraints</span> library.<br>
+<a href="../examples/HD/graphics/PointManipulation"><span style='font-size:
+10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HD/PointManipulation.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>PointSnapping</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#7D7DFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#6464FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to highlight and then select points in
+3D by using view-apparent snapping. A haptic device is a very satisfying and
+efficient tool for selecting and manipulating objects in 3D. This example also
+shows how to use the <span class=SpellE>SnapConstraints</span> library for
+handling the snapping as well as the <span class=SpellE>HapticDevice</span> C++
+wrapper for managing state and event synchronization.<br>
+<a href="../examples/HD/graphics/PointSnapping"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/PointSnapping.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>SimpleHapticScene</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Introductory example that shows how to graphically
+display a 3D cursor using OpenGL and GLUT. This example demonstrates the proper
+way to synchronize state between the haptics and graphics loops. It also shows
+how to properly map the haptic workspace to the view volume using the utility
+routines available in HDU. Lastly, it incorporates a simple anchored spring
+force that becomes active when the haptic device button is pressed.<br>
+<a href="../examples/HD/graphics/SimpleHapticScene"><span style='font-size:
+10.0pt'>To source files</span></a> | <a
+href="../examples/bin/Win32/HD/SimpleHapticScene.exe"><span class=GramE><span
+style='font-size:10.0pt'>To</span></span><span style='font-size:10.0pt'>
+pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><span class=SpellE><b><span style='font-size:13.5pt;color:white'>SlidingContact</span></b></span><span
+style='color:white'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to model object-object contact between
+two spheres, where one sphere is controlled by the haptic device. This example
+demonstrates force feedback from the haptic device where the endpoint is a
+volume versus a single point.<br>
+<a href="../examples/HD/graphics/SlidingContact"><span style='font-size:10.0pt'>To
+source files</span></a> | <a href="../examples/bin/Win32/HD/SlidingContact.exe"><span
+class=GramE><span style='font-size:10.0pt'>To</span></span><span
+style='font-size:10.0pt'> pre-built executable</span></a><o:p></o:p></span></p>
+
+<p><a href="#Top"><b><span style='font-size:13.5pt'>Back to top</span></b><span
+style='font-size:10.0pt'><br>
+</span></a>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:Arial;color:white'><o:p>&nbsp;</o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'><span
+style='font-family:Arial;color:white'>
+
+<hr size=3 width="90%" noshade color="#000099" align=center>
+
+</span></div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;text-indent:-.5in;mso-text-indent-alt:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .5in'><a name=QuickHapticsExamples><![if !supportLists]><b><span
+style='font-size:18.0pt;font-family:Arial;mso-fareast-font-family:Arial;
+color:white'><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'><span
+style='mso-spacerun:yes'> </span></span>V.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]></a><span class=SpellE><span
+style='mso-bookmark:QuickHapticsExamples'><b><span style='font-size:18.0pt;
+font-family:Arial;color:white'>QuickHaptics</span></b></span></span><span
+style='mso-bookmark:QuickHapticsExamples'><b><span style='font-size:18.0pt;
+font-family:Arial;color:white'> Examples<o:p></o:p></span></b></span></p>
+
+<span style='mso-bookmark:QuickHapticsExamples'></span>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>ComplexScene</span></span><span style='font-size:13.5pt;
+font-family:Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>This examples shows how to load multiple objects
+in to the scene each with a texture, add some text to the scene and set special
+rendering effects like the magnetic which attracts the haptic cursor and makes
+it stick to an object.<span style='mso-spacerun:yes'>  </span>It also shows how
+to make an object orbit about a specific axis and center point. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../QuickHaptics/Examples/ComplexScene"><span
+style='font-size:10.0pt'>To source files</span></a> | </span><span
+style='font-size:10.0pt;color:white'><a href="../QuickHaptics/bin/Win32"><span
+class=GramE>To</span> pre-built executable directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>EarthSpin</span></span><span style='font-size:13.5pt;font-family:
+Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Takes the <span class=SpellE>SimpleSphere</span>
+example a few steps further by adding a texture and spin to the sphere.<o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../QuickHaptics/Examples/EarthSpin"><span
+style='font-size:10.0pt'>To source files</span></a> | </span><span
+style='font-size:10.0pt;color:white'><a href="../QuickHaptics/bin/Win32"><span
+class=GramE>To</span> pre-built executable directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>MultipleWindows</span></span><span style='font-size:13.5pt;
+font-family:Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to create multiple windows under <span
+class=SpellE>QuickHaptics</span> using the Win32 Application. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../QuickHaptics/Examples/MultipleWindows"><span
+style='font-size:10.0pt'>To source files</span></a> | </span><span
+style='font-size:10.0pt;color:white'><a href="../QuickHaptics/bin/Win32"><span
+class=GramE>To</span> pre-built executable directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>pickApples</span></span><span style='font-size:13.5pt;font-family:
+Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>This example shows how to handle haptic events
+like touch and button presses. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../QuickHaptics/Examples/pickApples"><span
+style='font-size:10.0pt'>To source files</span></a> | </span><span
+style='font-size:10.0pt;color:white'><a href="../QuickHaptics/bin/Win32"><span
+class=GramE>To</span> pre-built executable directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>ShapeDepthFeedback</span></span><span style='font-size:13.5pt;
+font-family:Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>This example demonstrates the two different types
+of haptic rendering techniques in OpenHaptics namely the &#8220;Depth Buffer
+Rendering&#8221; and &#8220;Feedback Buffer Rendering&#8221;. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a
+href="../QuickHaptics/Examples/ShapeDepthFeedback"><span style='font-size:10.0pt'>To
+source files</span></a> | </span><span style='font-size:10.0pt;color:white'><a
+href="../QuickHaptics/bin/Win32"><span class=GramE>To</span> pre-built executable
+directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>SimpleSphere</span></span><span style='font-size:13.5pt;
+font-family:Arial;color:white'>&nbsp;<o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Shows how to add a simple 3d sphere to the haptic
+scene and make it touchable. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../QuickHaptics/Examples/SimpleSphere"><span
+style='font-size:10.0pt'>To source files</span></a> | </span><span
+style='font-size:10.0pt;color:white'><a href="../QuickHaptics/bin/Win32"><span
+class=GramE>To</span> pre-built executable directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>SkullCoulombForce</span></span><span style='font-size:13.5pt;
+font-family:Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#9696FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>This example demonstrates how to model attractive
+coulomb forces between two dynamic charges. This demo also introduces new features
+like the <span class=SpellE>ServoLoopCallback</span> under <span class=SpellE>QuickHaptics</span>
+which allows the user to command custom forces to the device at the haptic
+update rate of 1000Hz. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a
+href="../QuickHaptics/Examples/SkullCoulombForce"><span style='font-size:10.0pt'>To
+source files</span></a> | </span><span style='font-size:10.0pt;color:white'><a
+href="../QuickHaptics/bin/Win32"><span class=GramE>To</span> pre-built executable
+directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>SpongyCow</span></span><span style='font-size:13.5pt;font-family:
+Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>This examples shows how to convert 3d models in to
+deformable models using <span class=SpellE>QuickHaptics</span>. <o:p></o:p></span></p>
+
+<p><span style='color:white'>Note: This is feature is experimental and the user
+should exert caution when using or modifying it. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../QuickHaptics/Examples/SpongyCow"><span
+style='font-size:10.0pt'>To source files</span></a> | </span><span
+style='font-size:10.0pt;color:white'><a href="../QuickHaptics/bin/Win32"><span
+class=GramE>To</span> pre-built executable directory</a><o:p></o:p></span></p>
+
+<h2><span class=SpellE><span style='font-size:13.5pt;font-family:Arial;
+color:white'>TeethCavityPick</span></span><span style='font-size:13.5pt;
+font-family:Arial;color:white'><o:p></o:p></span></h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>Complexity:&nbsp;<o:p></o:p></span></p>
+  </td>
+  <td style='padding:0in 0in 0in 0in'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+   style='mso-cellspacing:0in;mso-padding-alt:0in 0in 0in 0in' height=5>
+   <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+    <td width=10 style='width:7.5pt;background:white;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#E1E1FF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#CBCBFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=10 style='width:7.5pt;background:#AFAFFF;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+    color:white'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;
+  color:white'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='color:white'>Uses all the features from the above examples and
+builds a comprehensive dental demo simulation. <o:p></o:p></span></p>
+
+<p><span style='color:white'><a href="../QuickHaptics/Examples/TeethCavityPick"><span
+style='font-size:10.0pt'>To source files</span></a> | </span><span
+style='font-size:10.0pt;color:white'><a href="../QuickHaptics/bin/Win32"><span
+class=GramE>To</span> pre-built executable directory</a><o:p></o:p></span></p>
+
+<p><span style='font-size:10.0pt;color:white'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;color:white'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;color:white'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='font-size:10.0pt;color:white'><o:p>&nbsp;</o:p></span></p>
+
+<p><span style='color:white'><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-size:13.5pt;font-family:Arial;color:white'><o:p>&nbsp;</o:p></span></h2>
+
+</div>
+
+</body>
+
+</html>
+ 

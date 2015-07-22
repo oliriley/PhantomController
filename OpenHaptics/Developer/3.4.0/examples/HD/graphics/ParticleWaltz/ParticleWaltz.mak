@@ -1,0 +1,92 @@
+# Makefile - ParticleWaltz.dsp
+
+INCLUDES=-I../../../../include
+INCLUDES+=-I../../../../libsrc/include
+INCLUDES+=-I../../../../utilities/include
+LDFLAGS=-L../../../../libsrc/lib -L../../../../utilities/lib
+
+ifndef examples_dir
+export examples_dir = /usr/share/3DTouch/examples
+endif
+
+examples_dir := $(examples_dir)/HD
+
+ifdef DEBUG
+CFG=ParticleWaltz_DEBUG
+else
+CFG=ParticleWaltz_RELEASE
+endif
+
+CC=gcc
+CFLAGS=
+CXX=g++
+CXXFLAGS=$(CFLAGS)
+
+ifeq "$(CFG)"  "ParticleWaltz_RELEASE"
+CFLAGS+=-W -fexceptions -O2 $(INCLUDES) -Dlinux -DNDEBUG
+LD=$(CXX) $(CXXFLAGS)
+LIBS+=-lHD -lHDU -lrt -lGL -lGLU -lglut
+else
+
+ifeq "$(CFG)"  "ParticleWaltz_DEBUG"
+CFLAGS+=-W -fexceptions -g -O0 $(INCLUDES) -Dlinux -D_DEBUG
+LD=$(CXX) $(CXXFLAGS)
+LIBS+=-lHD -lHDUD -lrt -lGL -lGLU -lglut
+endif
+endif
+
+ifndef TARGET
+TARGET=ParticleWaltz
+endif
+
+.PHONY: all
+all: $(TARGET)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+%.o: %.cc
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+%.o: %.cxx
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+%.res: %.rc
+	$(RC) $(CPPFLAGS) -o $@ -i $<
+
+SOURCE_FILES= \
+	ActorDynamics.cpp \
+	DynamicsSimulator.cpp \
+	ForceModel.cpp \
+	helper.cpp \
+	main.cpp
+
+HEADER_FILES= \
+	ActorDynamics.h \
+	Constants.h \
+	DynamicsSimulator.h \
+	ForceModel.h
+
+RESOURCE_FILES=
+
+SRCS=$(SOURCE_FILES) $(HEADER_FILES) $(RESOURCE_FILES) 
+
+OBJS=$(patsubst %.rc,%.res,$(patsubst %.cxx,%.o,$(patsubst %.cpp,%.o,$(patsubst %.cc,%.o,$(patsubst %.c,%.o,$(filter %.c %.cc %.cpp %.cxx %.rc,$(SRCS)))))))
+
+$(TARGET): $(OBJS)
+	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+
+.PHONY: clean
+clean:
+	-rm -f $(OBJS) $(TARGET)
+
+.PHONY: install
+install:
+	install -m 755 -o 0 -g 0 -d $(examples_dir)/graphics/$(TARGET)
+	install -m 644 -o 0 -g 0 Makefile $(examples_dir)/graphics/$(TARGET)
+	install -m 644 -o 0 -g 0 $(SRCS) $(examples_dir)/graphics/$(TARGET)
+
+
