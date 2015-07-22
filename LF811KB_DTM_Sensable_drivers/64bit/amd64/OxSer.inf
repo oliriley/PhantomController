@@ -1,0 +1,291 @@
+﻿;/++
+;
+;Copyright (c) 1999-2009 Oxford Semiconductor Inc.  All rights reserved.
+;
+;Abstract:
+;    Serial WDF driver installation file for Oxford Semiconductor UART products.
+;
+;--*/
+
+
+[Version]
+Signature                   = "$Windows NT$"
+Class                       = Ports
+ClassGuid                   = {4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider                    = %Oxsemi%
+;#OxData#CatalogFile                 = [[UartFileName]].cat
+CatalogFile                 = OxSer.cat
+;#OxEndData
+;#OxData#DriverVer                   = [[UartDate]],[[UartVersion]]
+DriverVer                   = 09/16/2009,7.00.0000.15
+;#OxEndData
+
+[DestinationDirs]
+DestinationDirs_DriversDir  = 12   ; %windir%\system32\drivers
+
+[SourceDisksNames]
+0=%Desc_0%
+
+
+
+[ControlFlags]
+;#OxData#ExcludeFromSelect           = [[MfFileName]]\PNP0501
+ExcludeFromSelect           = OxMf\PNP0501
+;#OxEndData
+
+
+[SourceDisksFiles]
+;#OxData#[[UartFileName]].sys               = 0
+OxSer.sys               = 0
+;#OxEndData
+;#OxData#[[UartUiFileName]].dll                = 0
+OxUi.dll                = 0
+;#OxEndData
+;#OxData#[[UartFileName]].oxbu                  = 0
+OxSer.oxbu                  = 0
+;#OxEndData
+;#OxData#[[UartFileName]].png               = 0
+OxSer.png               = 0
+;#OxEndData
+
+
+
+[Manufacturer]
+%Oxsemi%                    = Oxsemi,ntAMD64
+
+
+; For Win2K
+[Oxsemi]
+;#OxData#%SerDesc%                   = SerInstSect,[[MfFileName]]\PNP0501
+%SerDesc%                   = SerInstSect,OxMf\PNP0501
+;#OxEndData
+
+; For WinXP and later
+[Oxsemi.ntAMD64]
+;#OxData#%SerDesc%                   = SerInstSect,[[MfFileName]]\PNP0501
+%SerDesc%                   = SerInstSect,OxMf\PNP0501
+;#OxEndData
+
+
+[SerInstSect]
+CopyFiles                   = DestinationDirs_DriversDir
+AddReg                      = SerInstSect_AddReg
+
+[DestinationDirs_DriversDir]
+;#OxData#[[UartFileName]].sys
+OxSer.sys
+;#OxEndData
+
+[SerInstSect_AddReg]
+HKR,,PortSubClass,1,01
+;#OxData#HKR,,EnumPropPages32,,"[[UartUiFileName]].dll,SerialPropPageProvider"
+HKR,,EnumPropPages32,,"OxUi.dll,SerialPropPageProvider"
+;#OxEndData
+;#OxData#HKR,,PluginName,%REG_MULTI_SZ%,"[[UartFileName]].oxbu"
+HKR,,PluginName,%REG_MULTI_SZ%,"OxSer.oxbu"
+;#OxEndData
+
+[SerInstSect.HW]
+AddReg                      = SerInstSect.HW_AddReg
+
+[SerInstSect.HW_AddReg]
+HKR,,"UpperFilters",%REG_MULTI_SZ%,"serenum"
+HKR,,"95xSpecific",%REG_BINARY%,01,00,00,00,00,00,c9,16,20,00,01,00,00,00,00,00,08,00,00,00,00,40,00,10
+HKR,,"ClockRate",%REG_DWORD%,1843200
+HKR,,"MultiportProperties",%REG_DWORD%,1
+
+
+[SerInstSect.Services]
+;#OxData#AddService                  = [[UartFileName]],%SPSVCINST_ASSOCSERVICE%,SerInstSect.Services_AddService,EventLog_AddService
+AddService                  = OxSer,%SPSVCINST_ASSOCSERVICE%,SerInstSect.Services_AddService,EventLog_AddService
+;#OxEndData
+AddService                  = Serenum,,Serenum_AddService
+
+[SerInstSect.Services_AddService]
+ServiceType                 = %SERVICE_KERNEL_DRIVER%
+StartType                   = %SERVICE_DEMAND_START%
+ErrorControl                = %SERVICE_ERROR_NORMAL%
+;#OxData#ServiceBinary               = %12%\[[UartFileName]].sys
+ServiceBinary               = %12%\OxSer.sys
+;#OxEndData
+LoadOrderGroup              = Extended base
+
+[Serenum_AddService]
+ServiceType                 = %SERVICE_KERNEL_DRIVER%
+StartType                   = %SERVICE_DEMAND_START%
+ErrorControl                = %SERVICE_ERROR_NORMAL%
+ServiceBinary               = %12%\serenum.sys
+LoadOrderGroup              = PNP Filter
+
+
+[EventLog_AddService]
+AddReg                      = EventLog_AddService_AddReg
+
+[EventLog_AddService_AddReg]
+;#OxData#HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\[[UartFileName]].sys"
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\OxSer.sys"
+;#OxEndData
+HKR,,TypesSupported,%REG_DWORD%,7
+
+
+
+;-------------------------------------------------------------------------
+; Coinstaller installation
+;-------------------------------------------------------------------------
+[DestinationDirs]
+CoInstaller_CopyFiles       = 11    ; %windir%\system32
+
+
+[SourceDisksFiles]
+; make sure the number matches with SourceDisksNames
+WdfCoinstaller01007.dll     = 0
+
+
+[SerInstSect.CoInstallers]
+AddReg                      = CoInstaller_AddReg
+CopyFiles                   = CoInstaller_CopyFiles
+
+
+[SerInstSect.Wdf]
+;#OxData#KmdfService                 = [[UartFileName]],SerInstSect.Wdf_KmdfService
+KmdfService                 = OxSer,SerInstSect.Wdf_KmdfService
+;#OxEndData
+
+[CoInstaller_CopyFiles]
+WdfCoinstaller01007.dll
+;#OxData#[[UartUiFileName]].dll
+OxUi.dll
+;#OxEndData
+;#OxData#[[UartFileName]].oxbu
+OxSer.oxbu
+;#OxEndData
+;#OxData#[[UartFileName]].png
+OxSer.png
+;#OxEndData
+
+[CoInstaller_AddReg]
+; Add WDF and Serial device coinstallers
+;#OxData#HKR,,CoInstallers32,%REG_MULTI_SZ%,"WdfCoinstaller01007.dll,WdfCoInstaller","[[UartUiFileName]].dll,SerialDeviceCoInstaller"
+HKR,,CoInstallers32,%REG_MULTI_SZ%,"WdfCoinstaller01007.dll,WdfCoInstaller","OxUi.dll,SerialDeviceCoInstaller"
+;#OxEndData
+; Add PluginName
+;#OxData#HKR,,PluginName,%REG_MULTI_SZ%,"[[UartFileName]].oxbu"
+HKR,,PluginName,%REG_MULTI_SZ%,"OxSer.oxbu"
+;#OxEndData
+
+[SerInstSect.Wdf_KmdfService]
+KmdfLibraryVersion          = 1.7
+
+
+
+[Strings]
+;
+; *******   Localizable Strings   *******
+;#OxData#Oxsemi                      = "[[Manufacturer]]"
+Oxsemi                      = "Oxford Semiconductor Inc"
+;#OxEndData
+;#OxData#SerDesc                     = "[[UartDeviceDescription]]"
+SerDesc                     = "Enhanced Communication Port"
+;#OxEndData
+;#OxData#Desc_0                      = "[[UartDriverDescription]]"
+Desc_0                      = "Oxford Semiconductor UART Driver"
+;#OxEndData
+
+
+; ******* Non Localizable Strings *******
+SERVICE_BOOT_START          = 0x0
+SERVICE_SYSTEM_START        = 0x1
+SERVICE_AUTO_START          = 0x2
+SERVICE_DEMAND_START        = 0x3
+SERVICE_DISABLED            = 0x4
+
+SERVICE_KERNEL_DRIVER       = 0x1
+
+SERVICE_ERROR_IGNORE        = 0x0
+SERVICE_ERROR_NORMAL        = 0x1
+SERVICE_ERROR_SEVERE        = 0x2
+SERVICE_ERROR_CRITICAL      = 0x3
+
+SPSVCINST_ASSOCSERVICE      = 0x2
+
+REG_SZ                      = 0x00000000
+REG_BINARY                  = 0x00000001
+REG_KEYONLY                 = 0x00000010
+REG_MULTI_SZ                = 0x00010000
+REG_MULTI_SZ_APPEND         = 0x00010008
+REG_EXPAND_SZ               = 0x00020000
+REG_DWORD                   = 0x00010001
+
+
+
+;#OxComment#-------------------------------------------------------------------
+;#OxComment#       Oxide definitions. Do not modify
+;#OxComment#-------------------------------------------------------------------
+
+;#OxGlobalSection#Manufacturer information
+    ;#OxGroup#Manufacturer name
+        ;#OxDefine#Manufacturer#Name #String[32]
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#UART Driver Version
+    ;#OxGroup#Driver version information
+        ;#OxDefine#UartVersion#Driver Version#String[12]
+        ;#OxDefine#UartDate#Date#Date
+    ;#OxEndGroup
+;#OxEndSection
+
+
+;#OxGlobalSection#Device and Driver Descriptions
+    ;#OxGroup#Multiport Descriptions
+        ;#OxDefine#MfDeviceDescription#Multiport Device#String[48]
+        ;#OxDefine#MfDriverDescription#Multiport Driver  #String[48]
+    ;#OxEndGroup
+    ;#OxGroup#UART Port Descriptions
+        ;#OxDefine#UartDeviceDescription#UART Device#String[48]
+        ;#OxDefine#UartDriverDescription#UART Driver  #String[48]
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#UART File Names
+    ;#OxGroup#These file names should not be left with their default Oxford Semiconductor names
+        ;#OxDefine#MfFileName#Multiport Driver          #FileName[32,false,oxmf]
+        ;#OxDefine#UartFileName#UART Driver             #FileName[32,false,oxser]
+        ;#OxDefine#UartUiFileName#UART User Interface#FileName[32,false,oxui]
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#Supported PCI UART Devices
+    ;#OxMultiGroup#Remove all entries if PCI devices are not supported
+        ;#OxDefine#MfVendorId#Vendor Id#VendorId
+        ;#OxDefine#MfDeviceId#Device Id#PCIDeviceId
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#Disabled PCI UART Devices
+    ;#OxMultiGroup#These functions will have a NULL driver loaded. Remove the entries if this is not required.
+        ;#OxDefine#DisabledVendorId#Vendor Id#VendorId
+        ;#OxDefine#DisabledDeviceId#Device Id#PCIDeviceId
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#Supported Single Function PC Card UART Devices
+    ;#OxMultiGroup#Remove all entries if single function PC Card devices are not supported
+        ;#OxDefine#SCfManufacturer#Product Information#String[32,true]
+        ;#OxDefine#SCfProduct#Product Name#String[32,true]
+        ;#OxDefine#SCfManufacturerId#Manufacturer Id#ManufacturerId
+        ;#OxDefine#SCfCardId#Card Id#CfCardId
+    ;#OxEndGroup    
+    ;#OxGroup#Check this option only if the driver should support an OXCF950 with no EEPROM or a  blank EEPROM
+        ;#OxDefine#SupportEepromlessCF950#Support OXCF950 with no/blank EEPROM?#Flag
+    ;#OxEndGroup   
+;#OxEndSection
+
+;#OxGlobalSection#Supported Multifunction PC Card UART Devices
+	;#OxMultiGroup#Remove all entries if multifunction PC Card devices are not supported
+        ;#OxDefine#MCfManufacturer#Product Information#String[32,true]
+        ;#OxDefine#MCfProduct#Product Name#String[32,true]
+        ;#OxDefine#MCfManufacturerId#Manufacturer Id#ManufacturerId
+        ;#OxDefine#MCfCardId#Card Id#CfCardId
+    ;#OxEndGroup
+;#OxEndSection

@@ -1,0 +1,286 @@
+﻿;/++
+;
+;Copyright (c) Oxford Semiconductor Inc.  All rights reserved.
+;
+;Abstract:
+;    GPIO WDF driver installation file.
+;
+;--*/
+
+
+[Version]
+Signature                   = "$Windows NT$"
+Class                       = GpioHw
+ClassGuid                   = {ECF9C35F-6374-4d89-A68C-5F8E503FCEF8}
+Provider                    = %Oxsemi%
+
+
+;#OxData#CatalogFile                 = [[GpioFileName]].cat
+CatalogFile                 = OxGpio.cat
+;#OxEndData
+;#OxData#DriverVer                   = [[Date]],[[Version]]
+DriverVer                   = 09/25/2009,1.01.0000.01
+;#OxEndData
+
+[DestinationDirs]
+DestinationDirs_DriversDir  = 12    ; %windir%\system32\drivers
+
+[SourceDisksNames]
+0=%Desc_0%
+
+
+
+[ClassInstall32]
+AddReg                      = GpioHwClass_AddReg
+
+[GpioHwClass_AddReg]
+HKR,,,,%GpioHwClassName%
+HKR,,Icon,,"-5"
+; Add WMI property page support
+HKR,,"WmiConfigClasses",%REG_SZ%,%GpioPropertySheetName%
+
+
+[ControlFlags]
+ExcludeFromSelect           = *
+
+
+[SourceDisksFiles]
+;#OxData#[[GpioFileName]].sys                  = 0
+OxGpio.sys                  = 0
+;#OxEndData
+
+
+[Manufacturer]
+%Oxsemi%                    = Oxsemi,ntAMD64
+
+
+; For Win2k
+[Oxsemi]
+;#OxData#%GpioDesc% = GpioInstSect,PCI\VEN_[[VendorId]]&DEV_[[DeviceId]]
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c006
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c106
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c116
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c11e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c126
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c134
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c13c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c146
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c154
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c15c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c204
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c20c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c304
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c30c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c436
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c43e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c446
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c44e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c466
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c46e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c476
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c47e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4a6
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4ae
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4b6
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4be
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4c6
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4ce
+;#OxEndData
+
+; For WinXP and later
+[Oxsemi.ntAMD64]
+;#OxData#%GpioDesc% = GpioInstSect,PCI\VEN_[[VendorId]]&DEV_[[DeviceId]]
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c006
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c106
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c116
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c11e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c126
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c134
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c13c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c146
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c154
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c15c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c204
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c20c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c304
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c30c
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c436
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c43e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c446
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c44e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c466
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c46e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c476
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c47e
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4a6
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4ae
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4b6
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4be
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4c6
+%GpioDesc% = GpioInstSect,PCI\VEN_1415&DEV_c4ce
+;#OxEndData
+
+
+[GpioInstSect]
+CopyFiles                   = DestinationDirs_DriversDir
+
+
+[DestinationDirs_DriversDir]
+;#OxData#[[GpioFileName]].sys
+OxGpio.sys
+;#OxEndData
+
+
+[GpioInstSect.HW]
+AddReg                      = GpioInstSect.HW_AddReg
+
+
+[GpioInstSect.Services]
+;#OxData#AddService                  = [[GpioFileName]],%SPSVCINST_ASSOCSERVICE%,GpioInstSect.Services_AddService,EventLog_AddService
+AddService                  = OxGpio,%SPSVCINST_ASSOCSERVICE%,GpioInstSect.Services_AddService,EventLog_AddService
+;#OxEndData
+
+[GpioInstSect.HW_AddReg]
+HKR,,IdleTimeout,%REG_DWORD%,%IDLE_TIMEOUT%
+HKR,,IdleLowPowerState,%REG_DWORD%,%IDLE_LOW_POWER_DEVICE_STATE%
+HKR,,WakeLowPowerState,%REG_DWORD%,%WAKE_LOW_POWER_DEVICE_STATE%
+; Support MSI
+HKR,"Interrupt Management",%REG_KEYONLY%
+HKR,"Interrupt Management\MessageSignaledInterruptProperties",%REG_KEYONLY%
+HKR,"Interrupt Management\MessageSignaledInterruptProperties",MSISupported,%REG_DWORD%,1
+
+
+[GpioInstSect.Services_AddService]
+ServiceType                 = %SERVICE_KERNEL_DRIVER%
+StartType                   = %SERVICE_DEMAND_START%
+ErrorControl                = %SERVICE_ERROR_NORMAL%
+;#OxData#ServiceBinary               = %12%\[[GpioFileName]].sys
+ServiceBinary               = %12%\OxGpio.sys
+;#OxEndData
+
+[EventLog_AddService]
+AddReg                      = EventLog_AddService_AddReg
+
+[EventLog_AddService_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+
+
+;-------------------------------------------------------------------------
+; Coinstaller installation
+;-------------------------------------------------------------------------
+[DestinationDirs]
+CoInstaller_CopyFiles       = 11    ; %windir%\system32
+
+
+[SourceDisksFiles]
+; make sure the number matches with SourceDisksNames
+WdfCoinstaller01005.dll     = 0
+
+
+[GpioInstSect.CoInstallers]
+AddReg                      = CoInstaller_AddReg
+CopyFiles                   = CoInstaller_CopyFiles
+
+
+[GpioInstSect.Wdf]
+;#OxData#KmdfService                 = [[GpioFileName]],GpioInstSect.Wdf_KmdfService
+KmdfService                 = OxGpio,GpioInstSect.Wdf_KmdfService
+;#OxEndData
+
+[CoInstaller_CopyFiles]
+WdfCoinstaller01005.dll
+
+[CoInstaller_AddReg]
+; Add WDF class coinstaller
+HKR,,CoInstallers32,%REG_MULTI_SZ%,"WdfCoinstaller01005.dll,WdfCoInstaller"
+; Add WMI property page provider class coinstaller
+HKLM,System\CurrentControlSet\Control\CoDeviceInstallers,{ECF9C35F-6374-4d89-A68C-5F8E503FCEF8}, \
+    %REG_MULTI_SZ%,"WmiProp.dll,WmiPropCoInstaller"
+
+[GpioInstSect.Wdf_KmdfService]
+KmdfLibraryVersion          = 1.5
+
+
+
+[Strings]
+;
+; *******   Localizable Strings   *******
+;#OxData#Oxsemi = "[[Manufacturer]]"
+Oxsemi = "Oxford Semiconductor Inc"
+;#OxEndData
+
+;#OxData#GpioHwClassName             = "[[DeviceDescription]]"
+GpioHwClassName             = "PCI Express GPIO Adapter"
+;#OxEndData
+;#OxData#GpioDesc                    = "[[DeviceDescription]]"
+GpioDesc                    = "PCI Express GPIO Adapter"
+;#OxEndData
+;#OxData#Desc_0                      = "[[DriverDescription]]"
+Desc_0                      = "Oxford Semiconductor GPIO Driver"
+;#OxEndData
+GpioPropertySheetName       = "GpioPropertySheet"
+
+
+; ******* Non Localizable Strings *******
+SERVICE_BOOT_START          = 0x0
+SERVICE_SYSTEM_START        = 0x1
+SERVICE_AUTO_START          = 0x2
+SERVICE_DEMAND_START        = 0x3
+SERVICE_DISABLED            = 0x4
+
+SERVICE_KERNEL_DRIVER       = 0x1
+
+SERVICE_ERROR_IGNORE        = 0x0
+SERVICE_ERROR_NORMAL        = 0x1
+SERVICE_ERROR_SEVERE        = 0x2
+SERVICE_ERROR_CRITICAL      = 0x3
+
+SPSVCINST_ASSOCSERVICE      = 0x2
+
+REG_SZ                      = 0x00000000
+REG_BINARY                  = 0x00000001
+REG_KEYONLY                 = 0x00000010
+REG_MULTI_SZ                = 0x00010000
+REG_EXPAND_SZ               = 0x00020000
+REG_DWORD                   = 0x00010001
+
+IDLE_TIMEOUT                = 10000
+IDLE_LOW_POWER_DEVICE_STATE = 4
+WAKE_LOW_POWER_DEVICE_STATE = 4
+
+
+;#OxComment#-------------------------------------------------------------------------------
+;#OxComment#                  OXide definitions. Do not modify
+;#OxComment#-------------------------------------------------------------------------------
+
+;#OxGlobalSection#Manufacturer information
+    ;#OxGroup#Manufacturer name
+        ;#OxDefine#Manufacturer#Name #String[32]
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#GPIO Details
+    ;#OxGroup#Driver version information
+        ;#OxDefine#Version#Driver Version#String[12]
+        ;#OxDefine#Date#Date#Date
+    ;#OxEndGroup
+    ;#OxGroup#Description
+        ;#OxDefine#DeviceDescription#Device Description#String[48]
+        ;#OxDefine#DriverDescription#Driver Description  #String[48]
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#GPIO File Names#The file names should not be left with their default Oxford Semiconductor names
+    ;#OxGroup#
+        ;#OxDefine#GpioFileName#GPIO driver name #FileName[32,false,oxgpio]
+    ;#OxEndGroup
+;#OxEndSection
+
+;#OxGlobalSection#Supported GPIO Devices
+    ;#OxMultiGroup#Supported Vendor and Device IDs
+        ;#OxDefine#VendorId#Vendor Id#VendorId
+        ;#OxDefine#DeviceId#Device Id#PCIeDeviceId
+    ;#OxEndGroup
+;#OxEndSection

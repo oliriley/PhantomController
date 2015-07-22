@@ -1,0 +1,196 @@
+;*******************************************************************************
+;*
+;*	Copyright (c) 1999-2009 Axxon (OEM) Inc..  All rights reserved.
+;*
+;*	Description:
+;*		Parallel Port driver installation file.
+;*
+;*******************************************************************************
+
+[Version]
+Signature                   = "$Windows NT$"
+Class                       = Ports
+ClassGuid                   = {4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider                    = %axxoninc%
+CatalogFile                 = OxPPort.cat
+DriverVer					= 01/22/2010, 21.02.0000.4
+
+
+[DestinationDirs]
+DestinationDirs_SystemDir   = 11	; %windir%\system32
+DestinationDirs_DriversDir  = 12   	; %windir%\system32\drivers
+CoInstaller_CopyFiles       = 11    ; %windir%\system32
+
+[ControlFlags]
+ExcludeFromSelect           = *
+
+;-------------------------------------------------------------------------------
+;                         Supporting Device List
+;-------------------------------------------------------------------------------
+[Manufacturer]
+%axxoninc%                    = axxoninc,ntx86
+
+; For Win2K
+[axxoninc]
+; PCI840
+%PCIPPortDesc%              = PPortInstSect2k, PCI\VEN_1415&DEV_8403
+; PCI952
+%PCIPPortDesc%              = PPortInstSect2k, PCI\VEN_1415&DEV_9523
+; PCI954, mPCI952, mPCI954, uPCI952, uPCI954
+%PCIPPortDesc%              = PPortInstSect2k, PCI\VEN_1415&DEV_9513
+
+
+; For XP and later
+[axxoninc.ntx86]
+; PCI840
+%PCIPPortDesc%              = PPortInstSect, PCI\VEN_1415&DEV_8403
+; PCI952
+%PCIPPortDesc%              = PPortInstSect, PCI\VEN_1415&DEV_9523
+; PCI954, mPCI952, mPCI954, uPCI952, uPCI954
+%PCIPPortDesc%              = PPortInstSect, PCI\VEN_1415&DEV_9513
+
+; PCIe840: function 0, -GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C000
+; PCIe840: function 0, +GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C004
+
+; PCIe952, mode 0: function 0, -GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C100
+; PCIe952, mode 0: function 0, +GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C104
+
+; PCIe952, mode 1: function 0, -UART, -GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C110
+; PCIe952, mode 1: function 0, -UART, +GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C114
+; PCIe952, mode 1: function 0, +UART, -GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C118
+; PCIe952, mode 1: function 0, +UART, +GPIO
+%PCIePPortDeviceDesc% 		= PPortInstSect, PCI\VEN_1415&DEV_C11C
+
+
+;-------------------------------------------------------------------------------
+;                           Install Parallel Port
+;-------------------------------------------------------------------------------
+[PPortInstSect2k]
+CopyFiles                   = DestinationDirs_SystemDir, DestinationDirs_DriversDir
+AddReg                      = PPortInstSect.AddReg
+CopyINF                     = OxPPort2k.inf
+
+[PPortInstSect]
+CopyFiles                   = DestinationDirs_SystemDir, DestinationDirs_DriversDir
+AddReg                      = PPortInstSect.AddReg
+
+[PPortInstSect.AddReg]
+HKR,,PortSubClass,%REG_BINARY%,00
+HKR,,ECPDevice,%REG_BINARY%,01
+HKR,,EnumPropPages32,,"OxPPort.dll,ParallelPortPropPageProvider"
+
+[PPortInstSect2k.HW]
+AddReg                      = PPortInstSect_HW.AddReg
+
+[PPortInstSect.HW]
+AddReg                      = PPortInstSect_HW.AddReg
+
+[PPortInstSect_HW.AddReg]
+HKR,,UseStandardAddresses,%REG_DWORD%,1
+HKR,,UnsupportedModes,%REG_DWORD%,0x00000000
+HKR,,FilterResourceMethod,%REG_DWORD%,0x00000002
+HKR,,CheckDsrOnIsr,%REG_DWORD%,0x00000003
+
+[PPortInstSect2k.Services]
+AddService                  = OxPPort,%SPSVCINST_ASSOCSERVICE%,PPortInstSect.Services_AddService,EventLog_AddService
+
+[PPortInstSect.Services]
+AddService                  = OxPPort,%SPSVCINST_ASSOCSERVICE%,PPortInstSect.Services_AddService,EventLog_AddService
+
+
+;-------------------------------------------------------------------------------
+;                         Service Install Section
+;-------------------------------------------------------------------------------
+[PPortInstSect.Services_AddService]
+ServiceType                 = %SERVICE_KERNEL_DRIVER%
+StartType                   = %SERVICE_BOOT_START%
+ErrorControl                = %SERVICE_ERROR_IGNORE%
+ServiceBinary               = %12%\OxPPort.sys
+LoadOrderGroup              = Parallel arbitrator
+
+[EventLog_AddService]
+AddReg                      = EventLog_AddService_AddReg
+
+[EventLog_AddService_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\OxPPort.sys"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+
+;-------------------------------------------------------------------------------
+;                     CoInstaller
+;-------------------------------------------------------------------------------
+[PPortInstSect2k.CoInstallers]
+AddReg                      = CoInstaller_AddReg
+CopyFiles                   = CoInstaller_CopyFiles
+
+[PPortInstSect.CoInstallers]
+AddReg                      = CoInstaller_AddReg
+CopyFiles                   = CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,%REG_MULTI_SZ%,"OxPPort.dll,ParallelPortDeviceCoInstaller"
+
+
+;-------------------------------------------------------------------------------
+;                     Copy Files
+;-------------------------------------------------------------------------------
+[DestinationDirs_SystemDir]
+OxPPort.dll
+
+[DestinationDirs_DriversDir]
+OxPPort.sys
+
+
+;-------------------------------------------------------------------------------
+;                     SourceDisksName & SourceDiskFiles
+;-------------------------------------------------------------------------------
+[SourceDisksNames]
+0=%SrcDiskDesc0%
+
+[SourceDisksFiles]
+OxPPort.dll                 = 0
+OxPPort.sys                 = 0
+
+
+;-------------------------------------------------------------------------------
+;                                 Strings
+;-------------------------------------------------------------------------------
+[Strings]
+; *******   Localizable Strings   *******
+axxoninc                    = "Axxon (OEM) Inc."
+PCIPPortDesc                = "PCI Parallel Port"
+PCIePPortDeviceDesc         = "PCI Express ECP Parallel Port"
+SrcDiskDesc0                = "Axxon (OEM) Inc. Parallel Port Driver"
+
+; ******* Non Localizable Strings *******
+SERVICE_BOOT_START          = 0x0
+SERVICE_SYSTEM_START        = 0x1
+SERVICE_AUTO_START          = 0x2
+SERVICE_DEMAND_START        = 0x3
+SERVICE_DISABLED            = 0x4
+
+SERVICE_KERNEL_DRIVER       = 0x1
+
+SERVICE_ERROR_IGNORE        = 0x0
+SERVICE_ERROR_NORMAL        = 0x1
+SERVICE_ERROR_SEVERE        = 0x2
+SERVICE_ERROR_CRITICAL      = 0x3
+
+SPSVCINST_ASSOCSERVICE      = 0x2
+
+REG_SZ                      = 0x00000000
+REG_BINARY                  = 0x00000001
+REG_KEYONLY                 = 0x00000010
+REG_MULTI_SZ                = 0x00010000
+REG_EXPAND_SZ               = 0x00020000
+REG_DWORD                   = 0x00010001
