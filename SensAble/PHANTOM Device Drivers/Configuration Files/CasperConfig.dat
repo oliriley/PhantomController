@@ -1,0 +1,104 @@
+; Manufacturing configuration data for Casper models
+
+[Encoder tests]
+; X axis (base)
+    X axis range start = -2350
+    X axis range end = 2238
+; Y axis (base)
+    Y axis range start = -3750
+    Y axis range end = -100
+; Z axis (base)
+    Z axis range start = -450
+    Z axis range end = 2200
+; X axis (stylus)
+    Stylus X axis range start = 250
+    Stylus X axis range end = 3800
+; Y axis (stylus)
+    Stylus Y axis range start = 2895
+    Stylus Y axis range end = 3800
+; Z axis (stylus)
+    Stylus Z axis range start = 600
+    Stylus Z axis range end = 3500
+; Number of times the stylus switch needs to transition to the pressed state
+    Switch pressed transitions = 3
+; Number of times the stylus presence switch needs to transition to the held state
+    Presence switch held transitions = 3
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Amplifier test]
+; Number of times the amplifiers need to transition from the disabled to the enabled state
+    Amplifier enabled transitions = 3
+; Whether the test is allowed to fail (the test sequence can continue)
+    Test can fail = 0
+
+[Force tests]
+; X axis
+    X axis minimum force voltage = -0.1
+    X axis maximum force voltage = 0.1
+; Y axis
+    Y axis minimum force voltage = -0.1
+    Y axis maximum force voltage = 0.1
+; Z axis
+    Z axis minimum force voltage = -0.1
+    Z axis maximum force voltage = 0.1
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Friction tests]
+; X axis
+    X axis maximum voltage = 0.5
+    X axis voltage increment = 0.0001
+    X axis encoder change = 150
+    X axis voltage change = 0.25
+; Y axis
+    Y axis maximum voltage = 0.5
+    Y axis voltage increment = 0.0001
+    Y axis encoder change = 150
+    Y axis voltage change = 0.25
+; Z axis
+    Z axis maximum voltage = 0.5
+    Z axis voltage increment = 0.0001
+    Z axis encoder change = 150
+    Z axis voltage change = 0.25
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Capstan tests]
+; X axis
+    X axis maximum voltage = 0.5
+    X axis move voltage = 0.2
+    X axis move damping = 0.0001
+    X axis encoder change = 100
+; Y axis
+    Y axis maximum voltage = 0.5
+    Y axis move voltage = 0.35
+    Y axis move damping = -0.0005
+    Y axis encoder change = 100
+; Z axis
+    Z axis maximum voltage = 0.5
+    Z axis move voltage = 0.3
+    Z axis move damping = -0.0005
+    Z axis encoder change = 100
+; Number of servo ticks to push against stops at max voltage
+    Time at max volts = 1000
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Box test]
+; X axis
+    X axis box stiffness = 1.0
+; Y axis
+    Y axis box stiffness = 1.0
+; Z axis
+    Z axis box stiffness = 1.0
+; Number of times all six walls of the box need to have been penetrated from the inside out
+    Box wall transitions = 3
+; Number of ticks at which must exceed max force to push through wall
+    Box ticks at max force = 150
+; Whether the test is allowed to fail (the test sequence can continue)
+    Test can fail = 0
+
+[General]
+; Allow Casper units only (0 = Wendy units may be used, 1 = Casper units must be used)
+    Allow Casper units only = 1

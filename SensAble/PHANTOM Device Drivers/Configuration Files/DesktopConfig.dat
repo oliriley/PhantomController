@@ -1,0 +1,182 @@
+; Manufacturing configuration data for Desktop models
+
+[Encoder tests]
+; X axis (base)
+    X axis range start = -11300
+    X axis range end = 11200
+; Y axis (base)
+    Y axis range start = -16500
+    Y axis range end = -100
+; Z axis (base)
+    Z axis range start = -10000
+    Z axis range end = 6300
+; X axis (stylus)
+    Stylus X axis range start = 400
+    Stylus X axis range end = 3600
+; Y axis (stylus)
+    Stylus Y axis range start = 1500
+    Stylus Y axis range end = 3000
+; Z axis (stylus)
+    Stylus Z axis range start = 400
+    Stylus Z axis range end = 3900
+; Number of times the stylus switch needs to transition to the pressed state
+    Switch pressed transitions = 3
+; Number of times the stylus presence switch needs to transition to the held state
+    Presence switch held transitions = 3
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Amplifier test]
+; Number of times the amplifiers need to transition from the disabled to the enabled state
+    Amplifier enabled transitions = 3
+; Whether the test is allowed to fail (the test sequence can continue)
+    Test can fail = 0
+
+[Force tests]
+; X axis
+    X axis minimum force voltage = -0.1
+    X axis maximum force voltage = 0.1
+; Y axis
+    Y axis minimum force voltage = -0.1
+    Y axis maximum force voltage = 0.1
+; Z axis
+    Z axis minimum force voltage = -0.1
+    Z axis maximum force voltage = 0.1
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Friction tests]
+; X axis
+    X axis maximum voltage = 0.9
+    X axis voltage increment = 0.0001
+    X axis encoder change = 250
+    X axis voltage change = 0.15
+; Y axis
+    Y axis maximum voltage = 0.9
+    Y axis voltage increment = 0.0001
+    Y axis encoder change = 250
+    Y axis voltage change = 0.5
+; Z axis
+    Z axis maximum voltage = 0.9
+    Z axis voltage increment = 0.0001
+    Z axis encoder change = 250
+    Z axis voltage change = 0.15
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Capstan tests]
+; X axis
+    X axis maximum voltage = 0.9
+    X axis move voltage = 0.4
+    X axis move damping = 0.0005
+    X axis encoder change = 100
+; Y axis
+    Y axis maximum voltage = 0.9
+    Y axis move voltage = 0.6
+    Y axis move damping = -0.0007
+    Y axis encoder change = 100
+; Z axis
+    Z axis maximum voltage = 0.9
+    Z axis move voltage = 0.5
+    Z axis move damping = 0.0
+    Z axis encoder change = -0.0007
+; Number of servo ticks to push against stops at max voltage
+    Time at max volts = 1000
+; Whether the tests are allowed to fail (the test sequence can continue)
+    Tests can fail = 0
+
+[Box test]
+; X axis
+    X axis box stiffness = 1.0
+; Y axis
+    Y axis box stiffness = 1.0
+; Z axis
+    Z axis box stiffness = 1.0
+; Number of times all six walls of the box need to have been penetrated from the inside out
+    Box wall transitions = 3
+; Number of ticks at which must exceed max force to push through wall
+    Box ticks at max force = 150
+; Whether the test is allowed to fail (the test sequence can continue)
+    Test can fail = 0
+
+[Calibration test]
+; X axis flags
+    X axis flag 1 min width = 0
+    X axis flag 1 max width = 0
+    X axis flag 2 min width = 1230
+    X axis flag 2 max width = 1447
+    X axis flag 3 min width = 0
+    X axis flag 3 max width = 0
+; Y axis flags
+    Y axis flag 1 min width = 0
+    Y axis flag 1 max width = 0
+    Y axis flag 2 min width = 1179
+    Y axis flag 2 max width = 1382
+    Y axis flag 3 min width = 0
+    Y axis flag 3 max width = 0
+; Z axis flags
+    Z axis flag 1 min width = 654
+    Z axis flag 1 max width = 892
+; X axis gaps
+    X axis gap 1 min width = 0
+    X axis gap 1 max width = 0
+    X axis gap 2 min width = 0
+    X axis gap 2 max width = 0
+; Y axis gaps
+    Y axis gap 1 min width = 0
+    Y axis gap 1 max width = 0
+    Y axis gap 2 min width = 0
+    Y axis gap 2 max width = 0
+
+[Calibration test - Rev 7]
+; X axis flags
+    X axis flag 1 min width = 980
+    X axis flag 1 max width = 1320
+    X axis flag 2 min width = 1455
+    X axis flag 2 max width = 1720
+    X axis flag 3 min width = 1880
+    X axis flag 3 max width = 2220
+; Y axis flags
+    Y axis flag 1 min width = 980
+    Y axis flag 1 max width = 1220
+    Y axis flag 2 min width = 1355
+    Y axis flag 2 max width = 1570
+    Y axis flag 3 min width = 1705
+    Y axis flag 3 max width = 1970
+; Z axis flags
+    Z axis flag 1 min width = 830
+    Z axis flag 1 max width = 1370
+; X axis gaps
+    X axis gap 1 min width = 3955
+    X axis gap 1 max width = 4245
+    X axis gap 2 min width = 3480
+    X axis gap 2 max width = 3820
+; Y axis gaps
+    Y axis gap 1 min width = 2655
+    Y axis gap 1 max width = 2920
+    Y axis gap 2 min width = 2280
+    Y axis gap 2 max width = 2550
+
+; For reference, the actual flag and gap width limits used by the driver are provided below
+;
+;   Flags:
+;       X axis          MIN     MAX
+;           Flag 1      733    1057
+;           Flag 2     1189    1482
+;           Flag 3     1614    1940
+;       Y axis
+;           Flag 1      757    1051
+;           Flag 2     1186    1382
+;           Flag 3     1501    1784
+;       Z axis
+;           Flag 1      522    1024
+;
+;   Gaps:
+;       X axis          MIN     MAX
+;           Gap  1     4263    4703
+;           Gap  2     3531    4151
+;       Y axis
+;           Gap  1     2864    3201
+;           Gap  2     2423    2732
+
+[General]

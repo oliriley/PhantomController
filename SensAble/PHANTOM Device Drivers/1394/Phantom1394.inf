@@ -1,0 +1,242 @@
+;
+; PHANToM1394.inf
+;
+; Copyright (c) 2002-2003 SensAble Technologies, Inc.
+; All rights reserved
+;
+; This file supports:
+;     Windows 2000
+;     Windows XP
+;     Windows Vista
+;     Windows 7
+;     Windows 2000 Server
+;     Windows Server 2003
+;     Windows Server 2008
+;
+; This file should be customized when shipped with a retail product.
+; Refer to the VHPD1394 Reference Manual, chapter 9, for more information.
+;
+; Note: Section names (enclosed in []) that begin with an upper-case letter 
+; are system-defined and should not be changed. Section names that begin with
+; an underscore ('_') are private and can be changed.
+;
+; Refer to the Windows DDK documentation for more information on INF files.
+;
+
+;******************************************************************************
+; Version Section
+;------------------------------------------------------------------------------
+[Version]
+Signature="$Windows NT$"
+Provider=%S_Provider%
+DriverVer=11/05/2009,2.20.0.0
+
+; This specifies the device setup class. By default, we use a private class.
+Class=PHANTOMHapticDevices
+ClassGUID={BB194951-4CD7-4f92-890D-81E6170621D6}
+
+; This specifies the .cat file provided by WHQL if the driver is certified.
+CatalogFile.NTx86=Phantom1394.cat
+CatalogFile.NTamd64=Phantom1394_x64.cat
+
+
+;******************************************************************************
+; Class install sections
+;------------------------------------------------------------------------------
+; The following sections are required only if we use a private device setup class.
+; They should be removed if a system-defined setup class is used.
+;
+[ClassInstall32]
+AddReg=_AddReg_ClassInstall
+
+[_AddReg_ClassInstall]
+HKR,,,,"%S_DeviceClassDisplayName%"
+HKR,,Icon,,"-21"
+
+
+;******************************************************************************
+; Manufacturer
+;------------------------------------------------------------------------------
+[Manufacturer]
+%S_Provider%=_Models, NTamd64
+
+
+;******************************************************************************
+; Models section
+;------------------------------------------------------------------------------
+; This section lists the devices to be installed.
+; x86-based systems
+[_Models]
+; This section specifies your device's hardware ID.
+; For more information on the hardware ID, see below.
+%S_DeviceDesc1%=_Install1, 1394\B99&10002
+
+; x64-based systems
+[_Models.NTamd64]
+; This section specifies your device's hardware ID.
+; For more information on the hardware ID, see below.
+%S_DeviceDesc1%=_Install1, 1394\B99&10002
+
+;
+; Format of the hardware ID string:
+;
+; (1)  1394\Vendor&Model
+; Vendor and Model are strings taken from the Vendor Leaf block and
+; the Model Leaf block of your device's configuration ROM.
+; Using this format of the hardware ID is the recommended choice
+; and is appropriate in most cases.
+; Example: 1394\Thesycon&ToasterDevice
+;
+; (2)  1394\UnitSpecifierID&UnitSoftwareVersion
+; UnitSpecifierID and UnitSoftwareVersion are taken from the
+; Unit Directory block of your devices's configuration ROM.
+; The numbers are given in hexadecimal format.
+; Example: 1394\609E&10483
+;
+; For a complete discussion of the hardware ID string,
+; refer to the VHPD1394 Reference Manual, chapter 9.
+
+
+;******************************************************************************
+; Install Sections
+;------------------------------------------------------------------------------
+[_Install1.NTx86]
+CopyFiles=_CopyFiles_sys
+
+[_Install1.NTx86.HW]
+AddReg=_AddReg_DevInterface1, _AddReg_Settings1
+
+[_Install1.NTx86.Services]
+AddService = %S_DriverName%, 0x00000002, _NT_AddService, _NT_EventLog
+
+[_NT_AddService]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\%S_DriverName%.sys
+
+[_NT_EventLog]
+AddReg=_NT_EventLog_AddReg
+
+[_NT_EventLog_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\%S_DriverName%.sys"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+
+[_Install1.NTamd64]
+CopyFiles=_CopyFiles_sys_x64
+
+[_Install1.NTamd64.HW]
+AddReg=_AddReg_DevInterface1, _AddReg_Settings1
+
+[_Install1.NTamd64.Services]
+AddService = %S_DriverName_x64%, 0x00000002, _NT_AddService_x64, _NT_EventLog_x64
+
+[_NT_AddService_x64]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\%S_DriverName_x64%.sys
+
+[_NT_EventLog_x64]
+AddReg=_NT_EventLog_AddReg_x64
+
+[_NT_EventLog_AddReg_x64]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\%S_DriverName_x64%.sys"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+
+;******************************************************************************
+; Device Interface Identifier
+;------------------------------------------------------------------------------
+[_AddReg_DevInterface1]
+; This section specifies your private software interface identifier.
+; Use guidgen.exe to generate a fresh GUID. Copy and paste that GUID into the 
+; line below and activate the line by removing the ';'.
+; This is strongly recommended if you ship the driver together with a product.
+; See the VHPD1394 Reference Manual, chapter 9, for more information.
+HKR,,VendorSpecificInterfaceGuid,%REG_SZ%,"{B987FE12-CBED-495e-B71E-0F990DD9194D}"
+
+; Uncomment this line to disable the default software interface of the driver.
+; This is recommended if you ship the driver together with a product.
+HKR,, DisableDefaultInterface, %REG_DWORD%, 1
+
+
+;******************************************************************************
+; Default Settings
+;------------------------------------------------------------------------------
+[_AddReg_Settings1]
+; This section configures the default behaviour of the driver.
+; For a description of the parameters, refer to the VHPD1394 Reference Manual, chapter 9.
+HKR,, RequestTimeout,          %REG_DWORD%, 1000
+HKR,, MonitorReset,            %REG_DWORD%, 1
+HKR,, ResetOnLastClose,        %REG_DWORD%, 0
+HKR,, ManualStopRequired,      %REG_DWORD%, 0
+HKR,, PowerStateOnOpen,        %REG_DWORD%, 0
+HKR,, PowerStateOnClose,       %REG_DWORD%, 3
+HKR,, MinPowerStateUsed,       %REG_DWORD%, 0
+HKR,, MinPowerStateUnused,     %REG_DWORD%, 3
+
+
+;******************************************************************************
+; Copy files and disk layout sections
+;------------------------------------------------------------------------------
+[_CopyFiles_sys]
+Phantom1394.sys
+
+[_CopyFiles_sys_x64]
+Phantom1394_x64.sys
+
+[DestinationDirs]
+DefaultDestDir  = 11    ; SYSTEM directory
+_CopyFiles_sys  = 10,System32\Drivers
+_CopyFiles_sys_x64  = 10,System32\Drivers
+
+[SourceDisksNames]
+1=%S_DiskName%,,
+
+[SourceDisksNames.amd64]
+1=%S_DiskName%,,
+
+[SourceDisksFiles]
+Phantom1394.sys=1
+
+[SourceDisksFiles.amd64]
+Phantom1394_x64.sys=1
+
+
+;******************************************************************************
+; Text strings
+;------------------------------------------------------------------------------
+[Strings]
+;
+; Non-Localizable Strings, DO NOT MODIFY!
+;
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+
+
+;
+; Localizable Strings, modify as required
+;
+
+; provider name
+S_Provider="SensAble Technologies, Inc."
+
+; device class display name, shown in Device Manager
+S_DeviceClassDisplayName="PHANTOM haptic devices"
+
+; device description
+S_DeviceDesc1="SensAble Technologies IEEE 1394 PHANTOM Haptic Device"
+
+; disk name
+S_DiskName="PDD Install Disk"
+
+; File name of driver executable (without extension).
+; If the name is modified, the [_CopyFiles_sys] and [SourceDisksFiles]
+; sections has to be modified as well!
+S_DriverName="Phantom1394"
+S_DriverName_x64="Phantom1394_x64"
