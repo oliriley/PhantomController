@@ -153,7 +153,7 @@ void mainLoop()
 
     printf("Spring stiffness: %.3f N/mm\n", stiffness);
 
-    while (TRUE)
+    while (1==1)
     {       
         /* Check for keyboard input. */
         if (_kbhit())
@@ -215,12 +215,15 @@ void mainLoop()
 HDCallbackCode HDCALLBACK AnchoredSpringForceCallback(void *pUserData)
 {
     static hduVector3Dd anchor;
-    static HDboolean bRenderForce = FALSE;
+    static HDboolean bRenderForce = (1==2);
     HDErrorInfo error;
 
     HDint nCurrentButtons, nLastButtons;
     hduVector3Dd position;
-    hduVector3Dd force = { 0, 0, 0 };
+    hduVector3Dd force;
+	force[0] = 0;
+	force[1] = 0;
+	force[2] = 0;
 
     hdBeginFrame(hdGetCurrentDevice());
 
@@ -234,14 +237,14 @@ HDCallbackCode HDCALLBACK AnchoredSpringForceCallback(void *pUserData)
     {
         /* Detected button down */
         memcpy(anchor, position, sizeof(hduVector3Dd));
-        bRenderForce = TRUE;
+        bRenderForce = (1==1);
     }
     else if ((nCurrentButtons & HD_DEVICE_BUTTON_1) == 0 &&
              (nLastButtons & HD_DEVICE_BUTTON_1) != 0)
 
     {
         /* Detected button up */
-        bRenderForce = FALSE;
+        bRenderForce = (1==2);
 
         /* Send zero force to the device, or else it will just continue
            rendering the last force sent */
@@ -274,7 +277,7 @@ HDCallbackCode HDCALLBACK AnchoredSpringForceCallback(void *pUserData)
     {
         if (hduIsForceError(&error))
         {
-            bRenderForce = FALSE;
+            bRenderForce = (1==2);
         }
         else if (hduIsSchedulerError(&error))
         {

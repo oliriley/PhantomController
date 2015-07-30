@@ -35,8 +35,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>ComplexSceneGLUT</ProjectName>
-    <ProjectGuid>{FB738DB2-8E42-4739-92B6-FA1284DCDAF2}</ProjectGuid>
+    <ProjectName>SimpleSphereGLUT</ProjectName>
+    <ProjectGuid>{0BB11B70-BB23-4999-8D70-6BC8034FC6F8}</ProjectGuid>
     <RootNamespace>TestLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
@@ -135,7 +135,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>include;$(OH_SDK_BASE)\include;$(OH_SDK_BASE)\utilities\include;$(OH_SDK_BASE)\QuickHaptics\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\header;..\..\utilities\include;..\..\include;$(OH_SDK_BASE)\include;$(OH_SDK_BASE)\utilities\include;$(OH_SDK_BASE)\QuickHaptics\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -147,7 +147,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>QHGLUTWrapper.lib;QH.lib;glut32.lib;hd.lib;hdu.lib;hl.lib;hlu.lib;OpenGL32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OH_SDK_BASE)\lib\$(Platform)\$(Configuration);$(OH_SDK_BASE)\utilities\lib\$(Platform)\$(Configuration);$(OH_SDK_BASE)\QuickHaptics\lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib\Win32\Debug;..\header;..\..\utilities\lib\Win32\Debug;..\..\lib\Win32\Debug;$(OH_SDK_BASE)\lib\$(Platform)\$(Configuration);$(OH_SDK_BASE)\utilities\lib\$(Platform)\$(Configuration);$(OH_SDK_BASE)\QuickHaptics\lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>

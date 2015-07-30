@@ -35,8 +35,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>SimpleSphereGLUT</ProjectName>
-    <ProjectGuid>{0BB11B70-BB23-4999-8D70-6BC8034FC6F8}</ProjectGuid>
+    <ProjectName>ComplexSceneGLUT</ProjectName>
+    <ProjectGuid>{FB738DB2-8E42-4739-92B6-FA1284DCDAF2}</ProjectGuid>
     <RootNamespace>TestLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
@@ -135,7 +135,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>include;$(OH_SDK_BASE)\include;$(OH_SDK_BASE)\utilities\include;$(OH_SDK_BASE)\QuickHaptics\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\header;..\..\utilities\include;..\..\include;$(OH_SDK_BASE)\include;$(OH_SDK_BASE)\utilities\include;$(OH_SDK_BASE)\QuickHaptics\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
