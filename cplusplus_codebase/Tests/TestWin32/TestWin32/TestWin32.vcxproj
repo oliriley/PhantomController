@@ -20,6 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -53,6 +54,7 @@
       <AdditionalIncludeDirectories>..\TestWin32\TestWin32;C:\GitHub\PhantomController\cplusplus_codebase\Tests\TestWin32\TestWin32;C:\GitHub\PhantomController\OpenHaptics\Developer 3.4.0\utilities\include;C:\GitHub\PhantomController\OpenHaptics\Developer 3.4.0\include;$(OH_SDK_BASE)\utilities\include;$(OH_SDK_BASE)\QuickHaptics\header;$(OH_SDK_BASE)\include;..\..\OpenHaptics\Developer 3.4.0\include;..\..\OpenHaptics\Developer 3.4.0\utilities\include;..\..\OpenHaptics\Developer 3.4.0\Quickhaptics\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CompileAsManaged>true</CompileAsManaged>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

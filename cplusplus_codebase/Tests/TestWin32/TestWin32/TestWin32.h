@@ -21,6 +21,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 #include <iostream>
 #include <fstream>
@@ -31,6 +32,9 @@
 #include <HDU/hduVector.h>
 #include <HDU/hduError.h>
 #include <GL/glut.h>
+
+using namespace std;
+using namespace System;
 
 const float HI_STIFF = 0.05;
 const float LO_STIFF = 0.01;
@@ -51,6 +55,7 @@ std::string getRat();
 
 void hapticLoop();
 void goHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
+void waitForHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
 void stiffDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
 void dampDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
 
