@@ -36,17 +36,19 @@
 using namespace std;
 using namespace System;
 
-const float HI_STIFF = 0.05;
+const float HI_STIFF = 0.08;
 const float LO_STIFF = 0.01;
 const float HI_DAMP = 0.1;
 const float LO_DAMP = 0.01;
 const float G = 0.012;
 const float STIFF_SCALE = 1.02;
 const float DAMP_SCALE = 1.05;
-const float SUCCESS_BARRIER = -70;
+const float SUCCESS_BARRIER = -35;
+const float HOME_DIST = 15;
 
 bool checkQuit();
-bool checkSuccess(hduVector3Dd position);
+bool checkSuccess(hduVector3Dd position, float side);
+bool checkFail(hduVector3Dd position, float side);
 bool errReport(char *fail, char *work);
 
 float distance3D(hduVector3Dd position, hduVector3Dd anchor);
@@ -58,5 +60,6 @@ void goHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPas
 void waitForHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
 void stiffDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
 void dampDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
-
+void writeData(hduVector3Dd position, hduVector3Dd force);
+void timeout(int seconds, hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force);
 

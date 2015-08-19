@@ -1,0 +1,25 @@
+%clear all
+close all
+clc
+
+pathString = 'C:\GitHub\PhantomController\cplusplus_codebase\Tests\TestWin32\TestWin32\RatData\';
+fileString = '123_20150803.txt';
+addpath(pathString);
+data = load(fileString);
+rmpath(pathString);
+
+figure(1)
+plot(data(:,1),data(:,2))
+ylabel('Successes')
+xlabel('Time (msec)')
+
+figure(2)
+subplot(3,1,1)
+plot(data(:,1),data(:,3))
+subplot(3,1,2)
+plot(data(:,1),data(:,4))
+subplot(3,1,3)
+plot(data(:,1),data(:,5))
+
+figure(3)
+plot3(data(:,3),data(:,4),data(:,5))

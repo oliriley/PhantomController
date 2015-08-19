@@ -6,6 +6,7 @@
 #include <TestWin32.h>
 
 int successCount = 0;
+int trialCount = 0;
 
 float stiffness = LO_STIFF;
 float damping = LO_DAMP;
@@ -23,11 +24,8 @@ int main(int argc, char *argv[])
 		getch();
 		return -1;
 	}
+	trainingData << ("% Columns: Time (msec)---Trials---Successes---x---y---z---x-force---y-force---z-force\n");
 	
-	/*string WTnum;
-	printf("Rat weight: ");
-	trainingData << getline(cin,WTnum);*/
-
 	//Initialize haptic device
 	HHD hHD = hdInitDevice(HD_DEFAULT_DEVICE);
 
@@ -69,6 +67,9 @@ int main(int argc, char *argv[])
 void hapticLoop()
 {
 	bool is_success;
+	bool is_failure;
+	float side = rand() % 2;
+	cout << "Side: " << side << '\n';
 
 	// An array to be rewritten repeatedly with
 	// new forces depending on the situation
@@ -82,7 +83,7 @@ void hapticLoop()
 	hduVector3Dd position;
 	hduVector3Dd positionPast;
 
-	// anchor is where the handle will return to, where
+	// anchor is where the handle will return to
 	// [0 0 0] represents the point the device was last calibrated to
 	hduVector3Dd anchor;
 		anchor[0] = 0;
@@ -101,42 +102,47 @@ void hapticLoop()
 		// Write the current device coordinates to 'position
 		hdGetDoublev(HD_CURRENT_POSITION, position);
 
-		// Check success condition(s)
-		is_success = checkSuccess(position);
+		// Check success or failure condition(s)
+		is_success = checkSuccess(position,side);
+		is_failure = checkFail(position,side);
 
 		// Write the difference between 'position' and 'anchor' to 'force'
+		// then add an anti-gravity term
 		hduVecSubtract(force, anchor, position);
 		force[1] = force[1] + G;
 
-		// Scale 'force' by 'stiffness', 'damping', and the distance from the last position, defined at the top
+		// Multiply 'force' by 'stiffness'
 		hduVecScaleInPlace(force, stiffness);
 
 		// Write the resulting 'force' vector to the device
 		hdSetDoublev(HD_CURRENT_FORCE, force);
 
 		// Write current state to output file
-		CURR_TICKS = GetTickCount();
-		if (CURR_TICKS - PREV_TICKS > 0)
-		{
-			trainingData << CURR_TICKS - BASE_TICKS << ",\t";
-			trainingData << successCount << ",\t";
-			trainingData << position[0] << ",\t";
-			trainingData << position[1] << ",\t";
-			trainingData << position[2] << ",\t";
-			trainingData << force[0] << ",\t";
-			trainingData << force[1] << ",\t";
-			trainingData << force[2] << "\n";
-
-			PREV_TICKS = CURR_TICKS;
-		}
+		writeData(position,force);
 
 		// At the end of the frame, device properties will (/can?) change again
 		hdEndFrame(hdGetCurrentDevice());
 
 		if (is_success)
 		{
+			trialCount ++;
+			successCount ++;
+			cout << "Success: " << successCount << '\n';
 			//goHome(position,anchor,positionPast,force);	
 			waitForHome(position,anchor,positionPast,force);
+			timeout(5, position, anchor, positionPast, force);
+			side = rand() % 2;
+			cout << "Side: " << side << '\n';
+		}
+		if (is_failure)
+		{
+			trialCount ++;
+			cout << "Failure\n";
+			//goHome(position,anchor,positionPast,force);	
+			waitForHome(position,anchor,positionPast,force);
+			timeout(10, position, anchor, positionPast, force);
+			side = rand() % 2;
+			cout << "Side: " << side << '\n';
 		}
 
 		// See if the user has instructed the program to quit
@@ -147,6 +153,7 @@ void hapticLoop()
 	}
 }
 
+// Get information from user to create file name
 string getRat()
 {
 	string IDnum;
@@ -169,6 +176,7 @@ string getRat()
 	return IDnum + "_" +  year + month + day + ".txt";
 }
 
+// Calculate the distance between two points in 3D
 float distance3D(hduVector3Dd position, hduVector3Dd anchor)
 {
 	float xdist = pow(position[0] - anchor[0],2);
@@ -177,6 +185,7 @@ float distance3D(hduVector3Dd position, hduVector3Dd anchor)
 	return sqrt(xdist + ydist + zdist);
 }
 
+// Check whether the user has indicated to stop the program
 bool checkQuit()
 {
 	if (_kbhit())
@@ -193,11 +202,30 @@ bool checkQuit()
 	return false;
 }
 
-bool checkSuccess(hduVector3Dd position)
+// Based on position, has the task been completed?
+bool checkSuccess(hduVector3Dd position, float side)
 {
-	return (position[1] < SUCCESS_BARRIER);
+	if (side)
+	{
+		return (position[1] < SUCCESS_BARRIER && position[0] > -SUCCESS_BARRIER);
+	} else 
+	{
+		return (position[1] < SUCCESS_BARRIER && position[0] < SUCCESS_BARRIER);
+	}
 }
 
+bool checkFail(hduVector3Dd position, float side)
+{
+	if (side)
+	{
+		return (position[1] < SUCCESS_BARRIER && position[0] < SUCCESS_BARRIER);
+	} else 
+	{
+		return (position[1] < SUCCESS_BARRIER && position[0] > -SUCCESS_BARRIER);
+	}
+}
+
+// Check if something has gone wrong in setup
 bool errReport(char *fail, char *work)
 {
 	HDErrorInfo error;
@@ -212,12 +240,11 @@ bool errReport(char *fail, char *work)
 	return false;
 }
 
+// Return the handle to its central position
 void goHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force)
 {
-	successCount ++;
-	cout << successCount << "\n";
-	//vibrate();	
-	while (distance3D(position, anchor) >= 15)
+	//vibrate();
+	while (distance3D(position, anchor) >= HOME_DIST)
 	{
 		if (stiffness < HI_STIFF)
 		{
@@ -256,20 +283,7 @@ void goHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPas
 
 		hdSetDoublev(HD_CURRENT_FORCE, force);
 
-		CURR_TICKS = GetTickCount();
-		if (CURR_TICKS - PREV_TICKS > 0)
-		{
-			trainingData << CURR_TICKS - BASE_TICKS << ",\t";
-			trainingData << successCount << ",\t";
-			trainingData << position[0] << ",\t";
-			trainingData << position[1] << ",\t";
-			trainingData << position[2] << ",\t";
-			trainingData << force[0] << ",\t";
-			trainingData << force[1] << ",\t";
-			trainingData << force[2] << "\n";
-
-			PREV_TICKS = CURR_TICKS;
-		}
+		writeData(position,force);
 				
 		hdEndFrame(hdGetCurrentDevice());
 
@@ -287,14 +301,24 @@ void goHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPas
 	return;
 }
 
+// Different version of goHome()
 void waitForHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force)
 {
-	
-	successCount ++;
-	cout << successCount << "\n";
 	//vibrate();	
-	while (distance3D(position, anchor) >= 15)
+	while (distance3D(position, anchor) >= HOME_DIST)
 	{
+		if (stiffness < HI_STIFF)
+		{
+			if (stiffness*STIFF_SCALE >= HI_STIFF)
+			{
+				stiffness = HI_STIFF;
+			}
+			else
+			{
+				stiffness = STIFF_SCALE*stiffness;
+			}
+		}
+
 		hdBeginFrame(hdGetCurrentDevice());
 				
 		positionPast = position;				
@@ -309,20 +333,7 @@ void waitForHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positi
 
 		hdSetDoublev(HD_CURRENT_FORCE, force);
 
-		CURR_TICKS = GetTickCount();
-		if (CURR_TICKS - PREV_TICKS > 0)
-		{
-			trainingData << CURR_TICKS - BASE_TICKS << ",\t";
-			trainingData << successCount << ",\t";
-			trainingData << position[0] << ",\t";
-			trainingData << position[1] << ",\t";
-			trainingData << position[2] << ",\t";
-			trainingData << force[0] << ",\t";
-			trainingData << force[1] << ",\t";
-			trainingData << force[2] << "\n";
-
-			PREV_TICKS = CURR_TICKS;
-		}
+		writeData(position,force);
 
 		hdEndFrame(hdGetCurrentDevice());
 
@@ -331,12 +342,12 @@ void waitForHome(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positi
 			return;
 		}
 	}
-
-	printf("Trial done.\n");
+	stiffness = LO_STIFF;
 
 	return;
 }
 
+// Return spring stiffness to normal level for task restart
 void stiffDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force)
 {
 	cout << "Stiff down \n";
@@ -358,26 +369,13 @@ void stiffDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd position
 
 		hdSetDoublev(HD_CURRENT_FORCE, force);
 
-		CURR_TICKS = GetTickCount();
-		if (CURR_TICKS - PREV_TICKS > 0)
-		{
-			trainingData << CURR_TICKS - BASE_TICKS << ",\t";
-			trainingData << successCount << ",\t";
-			trainingData << position[0] << ",\t";
-			trainingData << position[1] << ",\t";
-			trainingData << position[2] << ",\t";
-			trainingData << force[0] << ",\t";
-			trainingData << force[1] << ",\t";
-			trainingData << force[2] << "\n";
-
-			PREV_TICKS = CURR_TICKS;
-		}
+		writeData(position,force);
 
 		hdEndFrame(hdGetCurrentDevice());
 	
 		if (checkQuit())
 		{
-			stiffness = LO_STIFF;
+			stiffness  = LO_STIFF;
 			return;
 		}
 	}
@@ -386,6 +384,7 @@ void stiffDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd position
 	return;
 }
 
+// Return damping constant to normal level for task restart
 void dampDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force)
 {
 	cout << "Damping down \n";
@@ -409,20 +408,7 @@ void dampDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionP
 
 		hdSetDoublev(HD_CURRENT_FORCE, force);
 
-		CURR_TICKS = GetTickCount();
-		if (CURR_TICKS - PREV_TICKS > 0)
-		{
-			trainingData << CURR_TICKS - BASE_TICKS << ",\t";
-			trainingData << successCount << ",\t";
-			trainingData << position[0] << ",\t";
-			trainingData << position[1] << ",\t";
-			trainingData << position[2] << ",\t";
-			trainingData << force[0] << ",\t";
-			trainingData << force[1] << ",\t";
-			trainingData << force[2] << "\n";
-
-			PREV_TICKS = CURR_TICKS;
-		}
+		writeData(position,force);
 
 		hdEndFrame(hdGetCurrentDevice());
 
@@ -436,6 +422,68 @@ void dampDown(hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionP
 	damping = LO_DAMP;
 	return;
 }
+
+// Add information about current device state to the output file
+void writeData(hduVector3Dd position, hduVector3Dd force)
+{
+	CURR_TICKS = GetTickCount();
+	if (CURR_TICKS - PREV_TICKS > 0)
+	{
+		trainingData << CURR_TICKS - BASE_TICKS << ",\t";
+		trainingData << trialCount << ",\t";
+		trainingData << successCount << ",\t";
+		trainingData << position[0] << ",\t";
+		trainingData << position[1] << ",\t";
+		trainingData << position[2] << ",\t";
+		trainingData << force[0] << ",\t";
+		trainingData << force[1] << ",\t";
+		trainingData << force[2] << "\n";
+
+		PREV_TICKS = CURR_TICKS;
+	}
+}
+
+// Maintain position for a specified number of seconds
+void timeout(int seconds, hduVector3Dd position, hduVector3Dd anchor, hduVector3Dd positionPast, hduVector3Dd force)
+{
+	printf("Holding...\n");
+	int now = GetTickCount();
+	int then = now;
+	stiffness = HI_STIFF;
+	while (now < then + 1000*seconds)
+	{
+		hdBeginFrame(hdGetCurrentDevice());
+		
+		positionPast = position;				
+		hdGetDoublev(HD_CURRENT_POSITION, position);
+
+		hduVecSubtract(force, anchor, position);
+		force[0] = force[0] - damping*distance3D(position,positionPast);
+		force[1] = force[1] - damping*distance3D(position,positionPast) + G;
+		force[2] = force[2] - damping*distance3D(position,positionPast);
+
+		hduVecScaleInPlace(force, stiffness);
+
+		hdSetDoublev(HD_CURRENT_FORCE, force);
+
+		writeData(position,force);
+		
+		hdEndFrame(hdGetCurrentDevice());
+
+		if (checkQuit())
+		{
+			stiffness = LO_STIFF;
+			damping = LO_DAMP;
+			return;
+		}
+		now = GetTickCount();
+	}
+	printf("Trial done.\n");
+	stiffness = LO_STIFF;
+	damping = LO_DAMP;
+	return;
+}
+
 /*
 
 */
