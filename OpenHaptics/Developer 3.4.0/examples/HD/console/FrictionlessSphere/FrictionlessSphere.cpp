@@ -43,12 +43,12 @@ Description:
 *******************************************************************************/
 HDCallbackCode HDCALLBACK FrictionlessSphereCallback(void *data)
 {
-    const double sphereRadius = 40.0;
-    const hduVector3Dd spherePosition(0,0,0);
+    const double sphereRadius = 10.0;
+    const hduVector3Dd spherePosition(0,50,0);
 
     // Stiffness, i.e. k value, of the sphere.  Higher stiffness results
     // in a harder surface.
-    const double sphereStiffness = .25;
+    const double sphereStiffness = .01;
 
     hdBeginFrame(hdGetCurrentDevice());
    
@@ -64,7 +64,7 @@ HDCallbackCode HDCALLBACK FrictionlessSphereCallback(void *data)
     // the center of the sphere is less than the sphere radius -- then the user 
     // is penetrating the sphere and a force should be commanded to repel him 
     // towards the surface.
-    if (distance < sphereRadius)
+    if (distance > sphereRadius)
     {
         // Calculate the penetration distance.
         double penetrationDistance = sphereRadius-distance;

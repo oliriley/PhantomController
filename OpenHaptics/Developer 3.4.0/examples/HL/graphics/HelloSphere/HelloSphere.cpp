@@ -46,7 +46,7 @@ static HHLRC ghHLRC = 0;
 /* Shape id for shape we will render haptically. */
 HLuint gSphereShapeId;
 
-#define CURSOR_SIZE_PIXELS 20
+#define CURSOR_SIZE_PIXELS 10
 static double gCursorScale;
 static GLuint gCursorDisplayList = 0;
 
