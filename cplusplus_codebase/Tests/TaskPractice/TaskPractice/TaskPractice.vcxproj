@@ -19,7 +19,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -42,6 +43,7 @@
     <OutDir>Debug\</OutDir>
     <IntDir>Debug\</IntDir>
     <TargetName>TaskPractice</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -53,13 +55,16 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\GitHub\PhantomController\cplusplus_codebase\Tests\TaskPractice\TaskPractice\;C:\GitHub\PhantomController\SensAble\3DTouch\utilities\include;C:\GitHub\PhantomController\SensAble\3DTouch\include;.\TaskPractice\TaskPractice\;.\TaskPractice\Debug\;..\..\SensAble\3DTouch\utilities\include;..\..\SensAble\3DTouch\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GitHub\PhantomController\OpenHaptics\Developer 3.4.0\include;C:\GitHub\PhantomController\OpenHaptics\Developer 3.4.0\utilities\include;C:\GitHub\PhantomController\cplusplus_codebase\Tests\TaskPractice\TaskPractice\;C:\GitHub\PhantomController\SensAble\3DTouch\utilities\include;C:\GitHub\PhantomController\SensAble\3DTouch\include;.\TaskPractice\TaskPractice\;.\TaskPractice\Debug\;..\..\SensAble\3DTouch\utilities\include;..\..\SensAble\3DTouch\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>Debug\TaskPractice.exe</OutputFile>
-      <AdditionalLibraryDirectories>C:\GitHub\PhantomController\SensAble\3DTouch\utilities\lib;C:\GitHub\PhantomController\SensAble\3DTouch\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\GitHub\PhantomController\OpenHaptics\Developer 3.4.0\Quickhaptics\lib\Win32\Debug;C:\GitHub\PhantomController\OpenHaptics\Developer 3.4.0\utilities\lib\Win32\Debug;C:\GitHub\PhantomController\OpenHaptics\Developer 3.4.0\lib\Win32\Debug;..\..\OpenHaptics\Developer 3.4.0\lib\Win32\Debug;..\..\OpenHaptics\Developer 3.4.0\QuickHaptics\lib\Win32\Debug;$(OH_SDK_BASE)\lib\Win32\Debug;$(OH_SDK_BASE)\QuickHaptics\lib\Win3\Debug;$(OH_SDK_BASE)\utilities\lib\Win32\Debug;..\..\OpenHaptics\Developer 3.4.0\utilities\lib\Win32\Debug;C:\GitHub\PhantomController\SensAble\3DTouch\utilities\lib;C:\GitHub\PhantomController\SensAble\3DTouch\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>hd.lib;hdu.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

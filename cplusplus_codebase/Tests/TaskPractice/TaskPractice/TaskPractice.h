@@ -17,21 +17,39 @@
 # include <string.h>
 #endif
 
+#include <HL/hl.h>
+#include <GL/glut.h>
+#include <HD/hd.h>
+#include <HDU/hduVector.h>
+#include <HDU/hduError.h>
+
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <vector>
 
 #include <iostream>
 #include <fstream>
 #include <string>
 
-#include <HD/hd.h>
-#include <HL/hl.h>
-#include <HDU/hduVector.h>
-#include <HDU/hduError.h>
-#include <GL/glut.h>
-
 using namespace std;
+
+const float STIFF = 0.03;
+const float DAMP = 0.01;
+const float G = 0.012;
+const float SHELL_RADIUS = 35;
+const float INTERDICT = 20; //make sure this is less than SHELL_RADIUS
+
+bool checkQuit();
+bool errReport(char *fail, char *work);
+
+float distance3D(hduVector3Dd position, hduVector3Dd anchor);
+
+std::string getRat();
+
+void hapticLoop();
+void checkSuccess(hduVector3Dd position, hduVector3Dd anchor);
+void writeData(hduVector3Dd position, hduVector3Dd force);
 
