@@ -36,6 +36,8 @@
 
 using namespace std;
 
+const int TRACK_SUCCESSES = 5; // How many previous points of success to block off
+
 const float STIFF = 0.03;
 const float DAMP = 0.01;
 const float G = 0.012;

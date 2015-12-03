@@ -170,6 +170,10 @@ void checkSuccess(hduVector3Dd position, hduVector3Dd anchor)
 			successCount ++;
 			cout<< "Shell size: " << shells << '\n' << "Success: " << successCount << '\n';
 			prevSuccess.push_back(position);
+			if (prevSuccess.size() > TRACK_SUCCESSES)
+			{
+				prevSuccess.erase(prevSuccess.begin()); // Remove oldest data point
+			}
 		}
 	}
 	shells = ceil(distance3D(position,anchor) / SHELL_RADIUS);
